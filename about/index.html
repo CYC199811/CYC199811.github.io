@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="day01, 程玉春的个人博客">
+    <meta name="keywords" content="关于, 程玉春的个人博客">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>day01 | 程玉春的个人博客</title>
+    <title>关于 | 程玉春的个人博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -311,12 +311,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">day01</h1>
+                    <h1 class="description center-align post-title">about</h1>
                 </div>
             </div>
         </div>
@@ -437,15 +437,6 @@
                 </div>
                 <div class="col s5 right-align">
                     
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95%E6%AF%8F%E6%97%A5%E5%88%B7%E9%A2%98/" class="post-category">
-                                代码随想录每日刷题
-                            </a>
-                        
-                    </div>
-                    
                 </div>
             </div>
 
@@ -453,7 +444,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2024-04-20
+                    2024-04-26
                 </div>
                 
 
@@ -462,7 +453,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    466
+                    25
                 </div>
                 
 
@@ -484,50 +475,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>day01<br>二分查找：LK704<br>1.主要注意点就是区间的选择</p>
-<p>[ ] 或者 [ ) 其分别对应的终止条件是 right &gt;&#x3D; left 和 right &gt; left</p>
-<p>代码：</p>
-<p>package org.example.二分查找;</p>
-<p>import org.example.数组.LK704;<br>&#x2F;&#x2F;二分搜索法</p>
-<p>&#x2F;**</p>
-<ul>
-<li>总结：</li>
-<li>1：[]左闭右闭的区间对应的条件right &gt;&#x3D; left 极限时[1,1]合法</li>
-<li>2：[)左开右闭的区间对应的条件right &gt; left 极限时[1,1)不合法所以要求rightindex &gt; leftindex</li>
-<li></li>
-<li>二分查找要求区间合法，主要注意边界值和目标值的关系，要求边界包含目标，不然就返回 -1</li>
-</ul>
-<p> *&#x2F;</p>
-<p>public class num704 {<br>    &#x2F;&#x2F;输入: nums &#x3D; [-1,0,3,5,9,12], target &#x3D; 9<br>    &#x2F;&#x2F;输出: 4<br>    &#x2F;&#x2F;解释: 9 出现在 nums 中并且下标为 4<br>    public int search(int[] nums, int target) {<br>        &#x2F;&#x2F;采用左闭右闭区间<br>        int left &#x3D; 0;<br>        int length &#x3D; nums.length;<br>        int right &#x3D; length - 1;<br>        if (nums[left] &gt; target || target &gt; nums[right])<br>        {<br>            return -1;<br>        }<br>        while (right &gt;&#x3D; left ){<br>            int middle &#x3D; left + ((right - left) &gt;&gt; 1);&#x2F;&#x2F;取中间值<br>            &#x2F;&#x2F;target在左区间<br>            if (nums[middle] &gt; target){<br>                right &#x3D; middle - 1;<br>            }else if (target &gt; nums[middle]){<br>                &#x2F;&#x2F;target在右区间<br>                left &#x3D; middle + 1;<br>            }else {<br>                &#x2F;&#x2F;找到了target<br>                return middle;<br>            }<br>        }<br>        return -1;<br>    }</p>
-<pre><code>public static void main(String[] args) &#123;
-    int[]nums = &#123;-1,0,3,5,9,12&#125;;
-    int target = 9;
-    num704 search = new num704();
-    int result = search.search(nums, target);
-    System.out.println(result);
-&#125;
-</code></pre>
-<p>}<br>快慢指针：LK027<br>1.快指针进行遍历更新操作，而慢指针进行新数组的一个接收存储记录</p>
-<p>代码：</p>
-<p>package org.example.二分查找;</p>
-<p>public class num027 {</p>
-<pre><code>public int removeElement(int[] nums, int val) &#123;
-    //输入：nums = [3,2,2,3], val = 3
-    //输出：2, nums = [2,2]
-    //数组元素只能覆盖不能真正删除
-    int slow = 0;//负责接收
-    int fast = 0;//负责去除及更新
-    int length = nums.length;
-    for (int i = 0; i &lt; length; i++) &#123;
-        if (nums[fast] != val)&#123;
-            nums[slow ++] = nums[fast];
-        &#125;
-        fast ++;
-    &#125;
-    return slow;
-&#125;
-</code></pre>
-<p>}</p>
+                <p>“这是我写的一些LeetCode的解题思路及代码！<br>还有一些JAVA的知识点”</p>
 
                 
             </div>
@@ -554,7 +502,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://cyc199811.github.io/2024/04/20/day01/">https://cyc199811.github.io/2024/04/20/day01/</a>
+                    <a href="https://cyc199811.github.io/about/index.html">https://cyc199811.github.io/about/index.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -759,58 +707,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2024/04/20/day02/">
+                <a href="/about/index.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="day02">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="about">
                         
-                        <span class="card-title">day02</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-04-20
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95%E6%AF%8F%E6%97%A5%E5%88%B7%E9%A2%98/" class="post-category">
-                                    代码随想录每日刷题
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
-            </div>
-            <div class="card">
-                <a href="/2024/04/20/day01/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="day01">
-                        
-                        <span class="card-title">day01</span>
+                        <span class="card-title">about</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -821,16 +729,50 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-04-20
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-04-26
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            <i class="fas fa-user fa-fw"></i>
+                            程玉春
                             
-                            <a href="/categories/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95%E6%AF%8F%E6%97%A5%E5%88%B7%E9%A2%98/" class="post-category">
-                                    代码随想录每日刷题
-                                </a>
+                        </span>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
+            </div>
+            <div class="card">
+                <a href="/about/index.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="about">
+                        
+                        <span class="card-title">about</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
                             
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-04-26
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            程玉春
                             
                         </span>
                     </div>
