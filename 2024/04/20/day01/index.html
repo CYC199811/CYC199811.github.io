@@ -2,6 +2,7 @@
 <html lang="zh-CN">
 
 
+
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="day01, 程玉春的博客">
@@ -29,8 +30,10 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 7.2.0"><link rel="alternate" href="/atom.xml" title="程玉春的博客" type="application/atom+xml">
-</head>
+<meta name="generator" content="Hexo 7.2.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="程玉春的博客" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 
@@ -512,7 +515,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    466
+                    425
                 </div>
                 
 
@@ -535,47 +538,47 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>day01<br>二分查找：LK704<br>1.主要注意点就是区间的选择</p>
-<p>[ ] 或者 [ ) 其分别对应的终止条件是 right &gt;&#x3D; left 和 right &gt; left</p>
+<p>[ ] 或者 [ ) 其分别对应的终止条件是 right &gt;= left 和 right &gt; left</p>
 <p>代码：</p>
 <p>package org.example.二分查找;</p>
-<p>import org.example.数组.LK704;<br>&#x2F;&#x2F;二分搜索法</p>
-<p>&#x2F;**</p>
+<p>import org.example.数组.LK704;<br>//二分搜索法</p>
+<p>/**</p>
 <ul>
 <li>总结：</li>
-<li>1：[]左闭右闭的区间对应的条件right &gt;&#x3D; left 极限时[1,1]合法</li>
+<li>1：[]左闭右闭的区间对应的条件right &gt;= left 极限时[1,1]合法</li>
 <li>2：[)左开右闭的区间对应的条件right &gt; left 极限时[1,1)不合法所以要求rightindex &gt; leftindex</li>
 <li></li>
 <li>二分查找要求区间合法，主要注意边界值和目标值的关系，要求边界包含目标，不然就返回 -1</li>
 </ul>
-<p> *&#x2F;</p>
-<p>public class num704 {<br>    &#x2F;&#x2F;输入: nums &#x3D; [-1,0,3,5,9,12], target &#x3D; 9<br>    &#x2F;&#x2F;输出: 4<br>    &#x2F;&#x2F;解释: 9 出现在 nums 中并且下标为 4<br>    public int search(int[] nums, int target) {<br>        &#x2F;&#x2F;采用左闭右闭区间<br>        int left &#x3D; 0;<br>        int length &#x3D; nums.length;<br>        int right &#x3D; length - 1;<br>        if (nums[left] &gt; target || target &gt; nums[right])<br>        {<br>            return -1;<br>        }<br>        while (right &gt;&#x3D; left ){<br>            int middle &#x3D; left + ((right - left) &gt;&gt; 1);&#x2F;&#x2F;取中间值<br>            &#x2F;&#x2F;target在左区间<br>            if (nums[middle] &gt; target){<br>                right &#x3D; middle - 1;<br>            }else if (target &gt; nums[middle]){<br>                &#x2F;&#x2F;target在右区间<br>                left &#x3D; middle + 1;<br>            }else {<br>                &#x2F;&#x2F;找到了target<br>                return middle;<br>            }<br>        }<br>        return -1;<br>    }</p>
-<pre><code>public static void main(String[] args) &#123;
-    int[]nums = &#123;-1,0,3,5,9,12&#125;;
+<p> */</p>
+<p>public class num704 {<br>    //输入: nums = [-1,0,3,5,9,12], target = 9<br>    //输出: 4<br>    //解释: 9 出现在 nums 中并且下标为 4<br>    public int search(int[] nums, int target) {<br>        //采用左闭右闭区间<br>        int left = 0;<br>        int length = nums.length;<br>        int right = length - 1;<br>        if (nums[left] &gt; target || target &gt; nums[right])<br>        {<br>            return -1;<br>        }<br>        while (right &gt;= left ){<br>            int middle = left + ((right - left) &gt;&gt; 1);//取中间值<br>            //target在左区间<br>            if (nums[middle] &gt; target){<br>                right = middle - 1;<br>            }else if (target &gt; nums[middle]){<br>                //target在右区间<br>                left = middle + 1;<br>            }else {<br>                //找到了target<br>                return middle;<br>            }<br>        }<br>        return -1;<br>    }</p>
+<pre><code>public static void main(String[] args) {
+    int[]nums = {-1,0,3,5,9,12};
     int target = 9;
     num704 search = new num704();
     int result = search.search(nums, target);
     System.out.println(result);
-&#125;
+}
 </code></pre>
 <p>}<br>快慢指针：LK027<br>1.快指针进行遍历更新操作，而慢指针进行新数组的一个接收存储记录</p>
 <p>代码：</p>
 <p>package org.example.二分查找;</p>
 <p>public class num027 {</p>
-<pre><code>public int removeElement(int[] nums, int val) &#123;
+<pre><code>public int removeElement(int[] nums, int val) {
     //输入：nums = [3,2,2,3], val = 3
     //输出：2, nums = [2,2]
     //数组元素只能覆盖不能真正删除
     int slow = 0;//负责接收
     int fast = 0;//负责去除及更新
     int length = nums.length;
-    for (int i = 0; i &lt; length; i++) &#123;
-        if (nums[fast] != val)&#123;
+    for (int i = 0; i &lt; length; i++) {
+        if (nums[fast] != val){
             nums[slow ++] = nums[fast];
-        &#125;
+        }
         fast ++;
-    &#125;
+    }
     return slow;
-&#125;
+}
 </code></pre>
 <p>}</p>
 
@@ -1085,7 +1088,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">8.8k</span>&nbsp;字
+                class="white-color">8k</span>&nbsp;字
             
             
             
@@ -1258,6 +1261,8 @@ $(function () {
 </div>
 
 
+
+
     <script src="/libs/materialize/materialize.min.js"></script>
     <script src="/libs/masonry/masonry.pkgd.min.js"></script>
     <script src="/libs/aos/aos.js"></script>
@@ -1304,6 +1309,15 @@ $(function () {
     
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
+
+      <!-- 后面添加的樱花效果 -->
+    <script type="text/javascript">
+        //只在桌面版网页启用特效
+        var windowWidth = $(window).width();
+        if (windowWidth > 768) {
+            document.write('<script type="text/javascript" src="/source/js/sakura.js"><\/script>');
+        }
+    </script> 
 
 </body>
 

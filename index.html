@@ -2,6 +2,7 @@
 <html lang="zh-CN">
 
 
+
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="程玉春的博客">
@@ -29,8 +30,10 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 7.2.0"><link rel="alternate" href="/atom.xml" title="程玉春的博客" type="application/atom+xml">
-</head>
+<meta name="generator" content="Hexo 7.2.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="程玉春的博客" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 
@@ -617,8 +620,8 @@
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                有效的括号：LK020思路：用栈来存储对应遍历的括号的右括号；当遇到右括号就弹栈；如果都匹配最后栈会为空，反之则不会为空！！！代码：
-12345678910111213141516171819202122232425262728293031
+                                有效的括号：LK020😂思路：用栈来存储对应遍历的括号的右括号；当遇到右括号就弹栈；如果都匹配最后栈会为空，反之则不会为空！！！代码：
+123456789101112131415161718192021222324252627282930
                             
                         </div>
                         <div class="publish-info">
@@ -667,7 +670,7 @@
                             
                                 用队列实现栈：
 
-代码：1234567891011121314151617181920212223242526272829303132class MyStack &#123;    //q1作为主要的队列，其元素排列顺序和出栈顺序相同   
+代码：1234567891011121314151617181920212223242526272829303132class MyStack {    //q1作为主要的队列，其元素排列顺序和出栈顺序相同    Queu
                             
                         </div>
                         <div class="publish-info">
@@ -802,10 +805,10 @@
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                分割等和子集：LeetCode416首先，本题要求集合里能否出现总和为 sum &#x2F; 2 的子集。
-背包的体积为sum &#x2F; 2
+                                分割等和子集：LeetCode416首先，本题要求集合里能否出现总和为 sum / 2 的子集。
+背包的体积为sum / 2
 背包要放入的商品（集合里的元素）重量为 元素的数值，价值也为元素的数值
-背包如果正好装满，说明
+背包如果正好装满，说明找到了总和为 sum
                             
                         </div>
                         <div class="publish-info">
@@ -848,7 +851,7 @@
 
 
 代码：
-12345678910111213141516package org.example.哈希;public class num344 &#123;    pub
+12345678910111213141516package org.example.哈希;public class num344 {    public v
                             
                         </div>
                         <div class="publish-info">
@@ -1053,7 +1056,9 @@
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                day02双指针法：LK997通过数组两端的指针逐步向中间遍历：其中终止条件 while (right &gt;&#x3D; left) 不能少 ‘&#x3D;’ 当临界条件 int[] nums &#x3D; {1};这种情况少了的话会判
+                                day02双指针法：LK997通过数组两端的指针逐步向中间遍历：其中终止条件 while (right &gt;= left) 不能少 ‘=’ 当临界条件 int[] nums = {1};这种情况少了的话会判断不了
+代码：
+package
                             
                         </div>
                         <div class="publish-info">
@@ -1093,9 +1098,10 @@
                         <div class="summary block-with-text">
                             
                                 day01二分查找：LK7041.主要注意点就是区间的选择
-[ ] 或者 [ ) 其分别对应的终止条件是 right &gt;&#x3D; left 和 right &gt; left
+[ ] 或者 [ ) 其分别对应的终止条件是 right &gt;= left 和 right &gt; left
 代码：
-package org.example.二分查
+package org.example.二分查找;
+im
                             
                         </div>
                         <div class="publish-info">
@@ -1196,7 +1202,7 @@ package org.example.二分查
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">8.8k</span>&nbsp;字
+                class="white-color">8k</span>&nbsp;字
             
             
             
@@ -1369,6 +1375,8 @@ $(function () {
 </div>
 
 
+
+
     <script src="/libs/materialize/materialize.min.js"></script>
     <script src="/libs/masonry/masonry.pkgd.min.js"></script>
     <script src="/libs/aos/aos.js"></script>
@@ -1415,6 +1423,15 @@ $(function () {
     
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
+
+      <!-- 后面添加的樱花效果 -->
+    <script type="text/javascript">
+        //只在桌面版网页启用特效
+        var windowWidth = $(window).width();
+        if (windowWidth > 768) {
+            document.write('<script type="text/javascript" src="/source/js/sakura.js"><\/script>');
+        }
+    </script> 
 
 </body>
 

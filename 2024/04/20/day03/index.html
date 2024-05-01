@@ -2,6 +2,7 @@
 <html lang="zh-CN">
 
 
+
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="day03, 程玉春的博客">
@@ -29,8 +30,10 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 7.2.0"><link rel="alternate" href="/atom.xml" title="程玉春的博客" type="application/atom+xml">
-</head>
+<meta name="generator" content="Hexo 7.2.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="程玉春的博客" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 
@@ -512,7 +515,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.3k
+                    1.2k
                 </div>
                 
 
@@ -540,102 +543,102 @@
 <p>代码：</p>
 <p>package org.example.链表;</p>
 <p>public class num203 {</p>
-<pre><code>public class ListNode &#123;
+<pre><code>public class ListNode {
     int val;
     ListNode next;
-    ListNode() &#123;&#125;
-    ListNode(int val) &#123; this.val = val; &#125;
-    ListNode(int val, ListNode next) &#123; this.val = val; this.next = next; &#125;
-&#125;
+    ListNode() {}
+    ListNode(int val) { this.val = val; }
+    ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+}
 
-public ListNode removeElements(ListNode head, int val) &#123;
-    if (head == null)&#123;
+public ListNode removeElements(ListNode head, int val) {
+    if (head == null){
         return head;
-    &#125;
+    }
     ListNode s = new ListNode(0, head);//定义一个哨兵指向头结点
 
     ListNode prev = s;
     ListNode curr = head;
 
-    while (curr != null)&#123;
-        if (curr.val == val)&#123;
+    while (curr != null){
+        if (curr.val == val){
             prev.next = curr.next;
-        &#125;else &#123;
+        }else {
             prev = curr;
-        &#125;
+        }
         curr = curr.next;
-    &#125;
+    }
     return s.next;
-&#125;
+}
 </code></pre>
-<p>}<br>设计链表：LK707<br>1.主要通过node &#x3D; node.next在node ！&#x3D; null 的情况下来实现链表的遍历</p>
+<p>}<br>设计链表：LK707<br>1.主要通过node = node.next在node ！= null 的情况下来实现链表的遍历</p>
 <p>2.这题运用到了</p>
-<p>for (int i &#x3D; 0; i &lt; index; i++) {&#x2F;&#x2F;index - 1<br>    pred &#x3D; pred.next;<br>}<br>来定位删除节点的位置</p>
+<p>for (int i = 0; i &lt; index; i++) {//index - 1<br>    pred = pred.next;<br>}<br>来定位删除节点的位置</p>
 <p>代码：</p>
 <p>package org.example.链表;</p>
-<p>public class num707 {<br>    class MyLinkedList {<br>        public class ListNode {<br>            int val;<br>            ListNode next;<br>            ListNode() {}<br>            ListNode(int val) { this.val &#x3D; val; }<br>            ListNode(int val, ListNode next) { this.val &#x3D; val; this.next &#x3D; next; }<br>        }</p>
+<p>public class num707 {<br>    class MyLinkedList {<br>        public class ListNode {<br>            int val;<br>            ListNode next;<br>            ListNode() {}<br>            ListNode(int val) { this.val = val; }<br>            ListNode(int val, ListNode next) { this.val = val; this.next = next; }<br>        }</p>
 <pre><code>    int size;
     ListNode head;
-    public MyLinkedList() &#123;
+    public MyLinkedList() {
         size = 0;
         head = new ListNode(0);
-    &#125;
+    }
 
-    public int get(int index) &#123;
-        if (index &lt; 0 || index &gt;= size)&#123;
+    public int get(int index) {
+        if (index &lt; 0 || index &gt;= size){
             return -1;
-        &#125;
+        }
         ListNode cur = head;
-        for (int i = 0; i &lt;= index; i++) &#123;
+        for (int i = 0; i &lt;= index; i++) {
             cur = cur.next;
-        &#125;
+        }
         return cur.val;
-    &#125;
+    }
 
-    public void addAtHead(int val) &#123;
+    public void addAtHead(int val) {
         addAtIndex(0, val);
-    &#125;
+    }
 
-    public void addAtTail(int val) &#123;
+    public void addAtTail(int val) {
         addAtIndex(size, val);
-    &#125;
+    }
 
-    public void addAtIndex(int index, int val) &#123;
-        if (index &gt; size)&#123;
+    public void addAtIndex(int index, int val) {
+        if (index &gt; size){
             return;
-        &#125;
-        if (index &lt; 0)&#123;
+        }
+        if (index &lt; 0){
             index = 0;
-        &#125;
+        }
         size ++;
         //找到要插入节点的前驱
         ListNode pred = head;
-        for (int i = 0; i &lt; index; i++) &#123;//index - 1
+        for (int i = 0; i &lt; index; i++) {//index - 1
             pred = pred.next;
-        &#125;
+        }
         ListNode added = new ListNode(val);
         ListNode next = pred.next;
         pred.next = added;
         added.next = next;
-    &#125;
+    }
 
-    public void deleteAtIndex(int index) &#123;
-        if (index &gt; size || index &lt; 0)&#123;
+    public void deleteAtIndex(int index) {
+        if (index &gt; size || index &lt; 0){
             return;
-        &#125;
+        }
         //创建哨兵节点方便节点删除
         ListNode s = new ListNode(-1, head);
         //找到要删除的节点的上一个节点
         ListNode prevDeleted = head;
-        for (int i = 0; i &lt; index; i++) &#123;//index - 1
+        for (int i = 0; i &lt; index; i++) {//index - 1
             prevDeleted = prevDeleted.next;
-        &#125;
+        }
         prevDeleted.next = prevDeleted.next.next;
-    &#125;
-&#125;
+    }
+}
 </code></pre>
-<p>}<br>class ListNode&#123;<br>    int val;<br>    ListNode next,prev;<br>    ListNode() &#123;&#125;;<br>    ListNode(int val)&#123;<br>        this.val &#x3D; val;<br>    &#125;<br>&#125;</p>
-<p>class MyLinkedList &#123;  </p>
+<p>}<br>class ListNode{<br>    int val;<br>    ListNode next,prev;<br>    ListNode() {};<br>    ListNode(int val){<br>        this.val = val;<br>    }<br>}</p>
+<p>class MyLinkedList {  </p>
 <pre><code>//记录链表中元素的数量
 int size;
 //记录链表的虚拟头结点和尾结点
@@ -721,10 +724,10 @@ public void deleteAtIndex(int index) &amp;#123;
     pre.next = pre.next.next;
 &amp;#125;
 </code></pre>
-<p>&#125;<br>反转链表：LK206<br>在指针遍历推进并进行指针反向的过程中定义的临时节点很重要，主要用来记录下一个一个节点，可以类比于数组变量中定义的临时变量记录下一个数值的效果</p>
+<p>}<br>反转链表：LK206<br>在指针遍历推进并进行指针反向的过程中定义的临时节点很重要，主要用来记录下一个一个节点，可以类比于数组变量中定义的临时变量记录下一个数值的效果</p>
 <p>代码：</p>
 <p>package org.example.链表;</p>
-<p>public class num206 {<br>    public class ListNode {<br>        int val;<br>        ListNode next;<br>        ListNode() {}<br>        ListNode(int val) { this.val &#x3D; val; }<br>        ListNode(int val, ListNode next) { this.val &#x3D; val; this.next &#x3D; next; }<br>    }<br>    &#x2F;&#x2F;双指针法暴力遍历反向<br>    public ListNode reverseList(ListNode head) {<br>        if (head &#x3D;&#x3D; null){<br>            return head;<br>        }<br>        ListNode curr &#x3D; head;<br>        ListNode temp &#x3D; null;<br>        ListNode prev &#x3D; null;<br>        while (curr !&#x3D; null){<br>            temp&#x3D; curr.next;&#x2F;&#x2F;记录下一个节点<br>            curr.next &#x3D; prev;&#x2F;&#x2F;指针反向<br>            &#x2F;&#x2F;向前推进遍历<br>            prev &#x3D;curr;<br>            curr &#x3D; temp;<br>        }<br>        return prev;<br>    }<br>}<br>&#x2F;&#x2F; 递归<br>class Solution &#123;<br>    public ListNode reverseList(ListNode head) &#123;<br>        return reverse(null, head);<br>    &#125;</p>
+<p>public class num206 {<br>    public class ListNode {<br>        int val;<br>        ListNode next;<br>        ListNode() {}<br>        ListNode(int val) { this.val = val; }<br>        ListNode(int val, ListNode next) { this.val = val; this.next = next; }<br>    }<br>    //双指针法暴力遍历反向<br>    public ListNode reverseList(ListNode head) {<br>        if (head == null){<br>            return head;<br>        }<br>        ListNode curr = head;<br>        ListNode temp = null;<br>        ListNode prev = null;<br>        while (curr != null){<br>            temp= curr.next;//记录下一个节点<br>            curr.next = prev;//指针反向<br>            //向前推进遍历<br>            prev =curr;<br>            curr = temp;<br>        }<br>        return prev;<br>    }<br>}<br>// 递归<br>class Solution {<br>    public ListNode reverseList(ListNode head) {<br>        return reverse(null, head);<br>    }</p>
 <pre><code>private ListNode reverse(ListNode prev, ListNode cur) &amp;#123;
     if (cur == null) &amp;#123;
         return prev;
@@ -738,7 +741,7 @@ public void deleteAtIndex(int index) &amp;#123;
     return reverse(cur, temp);
 &amp;#125;
 </code></pre>
-<p>&#125;<br>&#x2F;&#x2F; 从后向前递归<br>class Solution &#123;<br>    ListNode reverseList(ListNode head) &#123;<br>        &#x2F;&#x2F; 边缘条件判断<br>        if(head &#x3D;&#x3D; null) return null;<br>        if (head.next &#x3D;&#x3D; null) return head;</p>
+<p>}<br>// 从后向前递归<br>class Solution {<br>    ListNode reverseList(ListNode head) {<br>        // 边缘条件判断<br>        if(head == null) return null;<br>        if (head.next == null) return head;</p>
 <pre><code>    // 递归调用，翻转第二个节点开始往后的链表
     ListNode last = reverseList(head.next);
     // 翻转头节点与第二个节点的指向
@@ -748,7 +751,7 @@ public void deleteAtIndex(int index) &amp;#123;
     return last;
 &amp;#125; 
 </code></pre>
-<p>&#125;</p>
+<p>}</p>
 
                 
             </div>
@@ -1255,7 +1258,7 @@ public void deleteAtIndex(int index) &amp;#123;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">8.8k</span>&nbsp;字
+                class="white-color">8k</span>&nbsp;字
             
             
             
@@ -1428,6 +1431,8 @@ $(function () {
 </div>
 
 
+
+
     <script src="/libs/materialize/materialize.min.js"></script>
     <script src="/libs/masonry/masonry.pkgd.min.js"></script>
     <script src="/libs/aos/aos.js"></script>
@@ -1474,6 +1479,15 @@ $(function () {
     
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
+
+      <!-- 后面添加的樱花效果 -->
+    <script type="text/javascript">
+        //只在桌面版网页启用特效
+        var windowWidth = $(window).width();
+        if (windowWidth > 768) {
+            document.write('<script type="text/javascript" src="/source/js/sakura.js"><\/script>');
+        }
+    </script> 
 
 </body>
 

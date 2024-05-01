@@ -2,6 +2,7 @@
 <html lang="zh-CN">
 
 
+
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="day02, 程玉春的博客">
@@ -29,8 +30,10 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 7.2.0"><link rel="alternate" href="/atom.xml" title="程玉春的博客" type="application/atom+xml">
-</head>
+<meta name="generator" content="Hexo 7.2.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="程玉春的博客" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 
@@ -512,7 +515,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    929
+                    827
                 </div>
                 
 
@@ -534,49 +537,49 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>day02<br>双指针法：LK997<br>通过数组两端的指针逐步向中间遍历：其中终止条件 while (right &gt;&#x3D; left) 不能少 ‘&#x3D;’ 当临界条件 int[] nums &#x3D; {1};这种情况少了的话会判断不了</p>
+                <p>day02<br>双指针法：LK997<br>通过数组两端的指针逐步向中间遍历：其中终止条件 while (right &gt;= left) 不能少 ‘=’ 当临界条件 int[] nums = {1};这种情况少了的话会判断不了</p>
 <p>代码：</p>
 <p>package org.example.数组字符串;</p>
-<p>public class num997 {<br>    public int[] sortedSquares(int[] nums) {<br>        &#x2F;&#x2F;接收结果<br>        int[] result &#x3D; new int[nums.length];<br>       int left &#x3D; 0;<br>       int right &#x3D; nums.length - 1;<br>       int resIndex &#x3D; nums.length - 1;<br>       while (right &gt;&#x3D; left){<br>           int leftPow &#x3D; nums[left] * nums[left];<br>           int rightPow &#x3D; nums[right] * nums[right];</p>
+<p>public class num997 {<br>    public int[] sortedSquares(int[] nums) {<br>        //接收结果<br>        int[] result = new int[nums.length];<br>       int left = 0;<br>       int right = nums.length - 1;<br>       int resIndex = nums.length - 1;<br>       while (right &gt;= left){<br>           int leftPow = nums[left] * nums[left];<br>           int rightPow = nums[right] * nums[right];</p>
 <pre><code>       //左边的平方大于右边
-       if (leftPow &gt; rightPow)&#123;
+       if (leftPow &gt; rightPow){
            left ++;
            result[resIndex] = leftPow;
-       &#125;else &#123;
+       }else {
            //右边的平方大于等于左边
            result[resIndex] = rightPow;
            right --;
-       &#125;
+       }
        resIndex --;
-   &#125;
+   }
     return result;
-&#125;
+}
 
-public static void main(String[] args) &#123;
-    int[] nums = &#123;-7,-3,2,3,11&#125;;
+public static void main(String[] args) {
+    int[] nums = {-7,-3,2,3,11};
     num997 pow = new num997();
     int[] p = pow.sortedSquares(nums);
-    for (int pp : p) &#123;
+    for (int pp : p) {
         System.out.println(pp);
-    &#125;
-&#125;
+    }
+}
 </code></pre>
 <p>}<br>滑动窗口法：LK209<br>这题我求取的是连续最小的子数组，但是这题是求取任意的最小子数组，看错变成了等于了</p>
 <p>代码：</p>
 <p>package org.example.数组字符串;</p>
-<p>public class num209 {<br>    &#x2F;&#x2F;滑动窗口法<br>    public int minSubArrayLen(int target, int[] nums) {<br>        int result &#x3D; Integer.MAX_VALUE;<br>        int slow &#x3D; 0;<br>        int fast &#x3D; 0;<br>        int sum &#x3D; nums[0];&#x2F;&#x2F;记录窗口内的和与target进行比较<br>        while (fast &lt; nums.length){<br>            &#x2F;&#x2F;sum &lt; target<br>            if (sum &lt; target){<br>                if (fast !&#x3D; nums.length - 1){<br>                    fast ++;<br>                    sum +&#x3D; nums[fast];<br>                }else {<br>                    break;<br>                }<br>            }<br>            &#x2F;&#x2F;sum &gt; target<br>            else if (sum &gt; target){<br>                sum -&#x3D; nums[slow];<br>                slow ++;<br>            }else {<br>                &#x2F;&#x2F;sum &#x3D; target<br>                result &#x3D; Math.min(result, fast - slow + 1);<br>                if (fast !&#x3D; nums.length - 1){<br>                    fast ++;<br>                    sum +&#x3D; nums[fast];<br>                }else {<br>                    break;<br>                }<br>            }<br>        }<br>        return result &#x3D;&#x3D; Integer.MAX_VALUE ? 0 : result;<br>    }</p>
-<pre><code>public static void main(String[] args) &#123;
-    int[] nums = &#123;1,2,3,4,5&#125;;
+<p>public class num209 {<br>    //滑动窗口法<br>    public int minSubArrayLen(int target, int[] nums) {<br>        int result = Integer.MAX_VALUE;<br>        int slow = 0;<br>        int fast = 0;<br>        int sum = nums[0];//记录窗口内的和与target进行比较<br>        while (fast &lt; nums.length){<br>            //sum &lt; target<br>            if (sum &lt; target){<br>                if (fast != nums.length - 1){<br>                    fast ++;<br>                    sum += nums[fast];<br>                }else {<br>                    break;<br>                }<br>            }<br>            //sum &gt; target<br>            else if (sum &gt; target){<br>                sum -= nums[slow];<br>                slow ++;<br>            }else {<br>                //sum = target<br>                result = Math.min(result, fast - slow + 1);<br>                if (fast != nums.length - 1){<br>                    fast ++;<br>                    sum += nums[fast];<br>                }else {<br>                    break;<br>                }<br>            }<br>        }<br>        return result == Integer.MAX_VALUE ? 0 : result;<br>    }</p>
+<pre><code>public static void main(String[] args) {
+    int[] nums = {1,2,3,4,5};
     num209 num209 = new num209();
     int res = num209.minSubArrayLen(11, nums);
     System.out.println(res);
-&#125;
+}
 </code></pre>
 <p>}<br>最小子数组代码：</p>
-<p>public int minSubArrayLen(int target, int[] nums) {<br>    int result &#x3D; Integer.MAX_VALUE;<br>    int slow &#x3D; 0;<br>    int fast &#x3D; 0;<br>    int sum &#x3D; nums[0];&#x2F;&#x2F;记录窗口内的和与target进行比较<br>    while (fast &lt; nums.length){<br>        &#x2F;&#x2F;sum &lt; target<br>        if (sum &lt; target){<br>            if (fast !&#x3D; nums.length - 1){<br>                fast ++;<br>                sum +&#x3D; nums[fast];<br>            }else {<br>                break;<br>            }<br>        }<br>        &#x2F;&#x2F;sum &gt; target<br>        else if (sum &gt; target){<br>            result &#x3D; Math.min(result, fast - slow + 1);<br>            sum -&#x3D; nums[slow];<br>            slow ++;<br>        }else {<br>            &#x2F;&#x2F;sum &#x3D; target<br>            result &#x3D; Math.min(result, fast - slow + 1);<br>            if (fast !&#x3D; nums.length - 1){<br>                fast ++;<br>                sum +&#x3D; nums[fast];<br>            }else {<br>                break;<br>            }<br>        }<br>    }<br>    return result &#x3D;&#x3D; Integer.MAX_VALUE ? 0 : result;<br>}<br>public int minSubArrayLen(int s, int[] nums) {<br>    int left &#x3D; 0;<br>    int sum &#x3D; 0;<br>    int result &#x3D; Integer.MAX_VALUE;<br>    for (int right &#x3D; 0; right &lt; nums.length; right++) {<br>        sum +&#x3D; nums[right];<br>        while (sum &gt;&#x3D; s) {<br>            result &#x3D; Math.min(result, right - left + 1);<br>            sum -&#x3D; nums[left++];<br>        }<br>    }<br>    return result &#x3D;&#x3D; Integer.MAX_VALUE ? 0 : result;<br>}<br>边界条件的合理处理：Lk059<br>这题难点就是终止条件以及边界条件左闭右开 [ ) 的一个判断比较难想到</p>
+<p>public int minSubArrayLen(int target, int[] nums) {<br>    int result = Integer.MAX_VALUE;<br>    int slow = 0;<br>    int fast = 0;<br>    int sum = nums[0];//记录窗口内的和与target进行比较<br>    while (fast &lt; nums.length){<br>        //sum &lt; target<br>        if (sum &lt; target){<br>            if (fast != nums.length - 1){<br>                fast ++;<br>                sum += nums[fast];<br>            }else {<br>                break;<br>            }<br>        }<br>        //sum &gt; target<br>        else if (sum &gt; target){<br>            result = Math.min(result, fast - slow + 1);<br>            sum -= nums[slow];<br>            slow ++;<br>        }else {<br>            //sum = target<br>            result = Math.min(result, fast - slow + 1);<br>            if (fast != nums.length - 1){<br>                fast ++;<br>                sum += nums[fast];<br>            }else {<br>                break;<br>            }<br>        }<br>    }<br>    return result == Integer.MAX_VALUE ? 0 : result;<br>}<br>public int minSubArrayLen(int s, int[] nums) {<br>    int left = 0;<br>    int sum = 0;<br>    int result = Integer.MAX_VALUE;<br>    for (int right = 0; right &lt; nums.length; right++) {<br>        sum += nums[right];<br>        while (sum &gt;= s) {<br>            result = Math.min(result, right - left + 1);<br>            sum -= nums[left++];<br>        }<br>    }<br>    return result == Integer.MAX_VALUE ? 0 : result;<br>}<br>边界条件的合理处理：Lk059<br>这题难点就是终止条件以及边界条件左闭右开 [ ) 的一个判断比较难想到</p>
 <p>代码：</p>
 <p>package org.example.数组字符串;</p>
-<p>public class num059 &#123;<br>    &#x2F;&#x2F;循环不变量原则  左闭右开[ )<br>    public int[][] generateMatrix(int n) &#123;<br>        int[][] nums &#x3D; new int[n][n];<br>        int startX &#x3D; 0, startY &#x3D; 0;  &#x2F;&#x2F; 每一圈的起始点<br>        int offset &#x3D; 1;<br>        int count &#x3D; 1;  &#x2F;&#x2F; 矩阵中需要填写的数字<br>        int loop &#x3D; 1; &#x2F;&#x2F; 记录当前的圈数<br>        int i, j; &#x2F;&#x2F; j 代表列, i 代表行;</p>
+<p>public class num059 {<br>    //循环不变量原则  左闭右开[ )<br>    public int[][] generateMatrix(int n) {<br>        int[][] nums = new int[n][n];<br>        int startX = 0, startY = 0;  // 每一圈的起始点<br>        int offset = 1;<br>        int count = 1;  // 矩阵中需要填写的数字<br>        int loop = 1; // 记录当前的圈数<br>        int i, j; // j 代表列, i 代表行;</p>
 <pre><code>    while (loop &lt;= n / 2) &amp;#123;
 
         // 顶部
@@ -613,7 +616,7 @@ public static void main(String[] args) &#123;
     return nums;
 &amp;#125;
 </code></pre>
-<p>&#125;</p>
+<p>}</p>
 
                 
             </div>
@@ -1120,7 +1123,7 @@ public static void main(String[] args) &#123;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">8.8k</span>&nbsp;字
+                class="white-color">8k</span>&nbsp;字
             
             
             
@@ -1293,6 +1296,8 @@ $(function () {
 </div>
 
 
+
+
     <script src="/libs/materialize/materialize.min.js"></script>
     <script src="/libs/masonry/masonry.pkgd.min.js"></script>
     <script src="/libs/aos/aos.js"></script>
@@ -1339,6 +1344,15 @@ $(function () {
     
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
+
+      <!-- 后面添加的樱花效果 -->
+    <script type="text/javascript">
+        //只在桌面版网页启用特效
+        var windowWidth = $(window).width();
+        if (windowWidth > 768) {
+            document.write('<script type="text/javascript" src="/source/js/sakura.js"><\/script>');
+        }
+    </script> 
 
 </body>
 
