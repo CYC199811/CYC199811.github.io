@@ -5,7 +5,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="contact, 程玉春的博客">
+    <meta name="keywords" content="day09, 程玉春的博客">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>contact | 程玉春的博客</title>
+    <title>day09 | 程玉春的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -364,12 +364,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">contact</h1>
+                    <h1 class="description center-align post-title">day09</h1>
                 </div>
             </div>
         </div>
@@ -483,12 +483,33 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E6%A0%88%E4%B8%8E%E9%98%9F%E5%88%97/">
+                                <span class="chip bg-color">栈与队列</span>
+                            </a>
+                        
+                            <a href="/tags/%E4%BC%98%E5%85%88%E7%BA%A7%E9%98%9F%E5%88%97/">
+                                <span class="chip bg-color">优先级队列</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%B0%8F%E9%A1%B6%E5%A0%86/">
+                                <span class="chip bg-color">小顶堆</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%9A%84%E5%AE%9E%E7%8E%B0/" class="post-category">
+                                基本数据结构的实现
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -497,7 +518,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2024-04-26
+                    2024-05-02
                 </div>
                 
 
@@ -506,7 +527,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    637
                 </div>
                 
 
@@ -528,7 +549,9 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h2 id="滑动窗口：LK239"><a href="#滑动窗口：LK239" class="headerlink" title="滑动窗口：LK239"></a>滑动窗口：LK239</h2><h3 id="思路：单调栈，保持队列内的元素单调增！获取队列口元素！"><a href="#思路：单调栈，保持队列内的元素单调增！获取队列口元素！" class="headerlink" title="思路：单调栈，保持队列内的元素单调增！获取队列口元素！"></a>思路：单调栈，保持队列内的元素单调增！获取队列口元素！</h3><h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">package org.example.栈;</span><br><span class="line"></span><br><span class="line">import java.util.ArrayDeque;</span><br><span class="line">import java.util.Stack;</span><br><span class="line"></span><br><span class="line">public class num239 {</span><br><span class="line">    public int[] maxSlidingWindow(int[] nums, int k) {</span><br><span class="line">        ArrayDeque&lt;Integer&gt; deque = new ArrayDeque&lt;&gt;();</span><br><span class="line">        int n = nums.length;</span><br><span class="line">        int[] res = new int[n - k + 1];</span><br><span class="line">        int idx = 0;</span><br><span class="line">        for(int i = 0; i &lt; n; i++) {</span><br><span class="line">            // 根据题意，i为nums下标，是要在[i - k + 1, i] 中选到最大值，只需要保证两点</span><br><span class="line">            // 1.队列头结点需要在[i - k + 1, i]范围内，不符合则要弹出</span><br><span class="line">            while(!deque.isEmpty() &amp;&amp; deque.peek() &lt; i - k + 1){</span><br><span class="line">                deque.poll();</span><br><span class="line">            }</span><br><span class="line">            // 2.既然是单调，就要保证每次放进去的数字要比末尾的都大，否则也弹出</span><br><span class="line">            while(!deque.isEmpty() &amp;&amp; nums[deque.peekLast()] &lt; nums[i]) {</span><br><span class="line">                deque.pollLast();</span><br><span class="line">            }</span><br><span class="line"></span><br><span class="line">            deque.offer(i);</span><br><span class="line"></span><br><span class="line">            // 因为单调，当i增长到符合第一个k范围的时候，每滑动一步都将队列头节点放入结果就行了</span><br><span class="line">            if(i &gt;= k - 1){</span><br><span class="line">                res[idx++] = nums[deque.peek()];</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        return res;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) {</span><br><span class="line">        int[] nums = {1, -1};</span><br><span class="line">        num239 num239 = new num239();</span><br><span class="line">        int[] res = num239.maxSlidingWindow(nums, 1);</span><br><span class="line">        for (int re : res) {</span><br><span class="line">            System.out.println(re);</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="前K个高频元素：LK347"><a href="#前K个高频元素：LK347" class="headerlink" title="前K个高频元素：LK347"></a>前K个高频元素：LK347</h2><h3 id="思路：运用小顶堆来存储前k个高频元素！优先级队列就是基于堆来实现的！"><a href="#思路：运用小顶堆来存储前k个高频元素！优先级队列就是基于堆来实现的！" class="headerlink" title="思路：运用小顶堆来存储前k个高频元素！优先级队列就是基于堆来实现的！"></a>思路：运用小顶堆来存储前k个高频元素！优先级队列就是基于堆来实现的！</h3><h3 id="小顶堆就是一个二叉树"><a href="#小顶堆就是一个二叉树" class="headerlink" title="小顶堆就是一个二叉树"></a>小顶堆就是一个二叉树</h3><h3 id="代码：-1"><a href="#代码：-1" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">public int[] topKFrequent2(int[] nums, int k) {</span><br><span class="line">    Map&lt;Integer,Integer&gt; map = new HashMap&lt;&gt;(); //key为数组元素值,val为对应出现次数</span><br><span class="line">    for (int num : nums) {</span><br><span class="line">        map.put(num, map.getOrDefault(num, 0) + 1);</span><br><span class="line">    }</span><br><span class="line">    //在优先队列中存储二元组(num, cnt),cnt表示元素值num在数组中的出现次数</span><br><span class="line">    //出现次数按从队头到队尾的顺序是从小到大排,出现次数最低的在队头(相当于小顶堆)</span><br><span class="line">    PriorityQueue&lt;int[]&gt; pq = new PriorityQueue&lt;&gt;((pair1, pair2) -&gt; pair1[1] - pair2[1]);</span><br><span class="line">    for (Map.Entry&lt;Integer, Integer&gt; entry : map.entrySet()) { //小顶堆只需要维持k个元素有序</span><br><span class="line">        if (pq.size() &lt; k) { //小顶堆元素个数小于k个时直接加</span><br><span class="line">            pq.add(new int[]{entry.getKey(), entry.getValue()});</span><br><span class="line">        } else {</span><br><span class="line">            if (entry.getValue() &gt; pq.peek()[1]) { //当前元素出现次数大于小顶堆的根结点(这k个元素中出现次数最少的那个)</span><br><span class="line">                pq.poll(); //弹出队头(小顶堆的根结点),即把堆里出现次数最少的那个删除,留下的就是出现次数多的了</span><br><span class="line">                pq.add(new int[]{entry.getKey(), entry.getValue()});</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    int[] ans = new int[k];</span><br><span class="line">    for (int i = k - 1; i &gt;= 0; i--) { //依次弹出小顶堆,先弹出的是堆的根,出现次数少,后面弹出的出现次数多</span><br><span class="line">        ans[i] = pq.poll()[0];</span><br><span class="line">    }</span><br><span class="line">    return ans;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
                 
             </div>
             <hr/>
@@ -554,7 +577,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://cyc199811.github.io/contact/index.html">https://cyc199811.github.io/contact/index.html</a>
+                    <a href="https://cyc199811.github.io/2024/05/02/day13/">https://cyc199811.github.io/2024/05/02/day13/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -591,7 +614,19 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E6%A0%88%E4%B8%8E%E9%98%9F%E5%88%97/">
+                                    <span class="chip bg-color">栈与队列</span>
+                                </a>
+                            
+                                <a href="/tags/%E4%BC%98%E5%85%88%E7%BA%A7%E9%98%9F%E5%88%97/">
+                                    <span class="chip bg-color">优先级队列</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%B0%8F%E9%A1%B6%E5%A0%86/">
+                                    <span class="chip bg-color">小顶堆</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -759,18 +794,17 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/contact/index.html">
+                <a href="/2024/05/03/day14/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="contact">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="day011">
                         
-                        <span class="card-title">contact</span>
+                        <span class="card-title">day011</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -780,18 +814,29 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-04-26
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-05-03
+                        </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            程玉春
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%9A%84%E5%AE%9E%E7%8E%B0/" class="post-category">
+                                    基本数据结构的实现
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86/">
+                        <span class="chip bg-color">二叉树的遍历</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -799,16 +844,16 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/contact/index.html">
+                <a href="/2024/04/27/day11/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="contact">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="day08">
                         
-                        <span class="card-title">contact</span>
+                        <span class="card-title">day08</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -819,17 +864,28 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-04-26
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-04-27
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            程玉春
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%9A%84%E5%AE%9E%E7%8E%B0/" class="post-category">
+                                    基本数据结构的实现
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%A0%88%E4%B8%8E%E9%98%9F%E5%88%97/">
+                        <span class="chip bg-color">栈与队列</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
