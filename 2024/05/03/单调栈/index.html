@@ -5,7 +5,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="KMP算法, 程玉春的博客">
+    <meta name="keywords" content="单调栈, 程玉春的博客">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>KMP算法 | 程玉春的博客</title>
+    <title>单调栈 | 程玉春的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -364,12 +364,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">KMP算法</h1>
+                    <h1 class="description center-align post-title">单调栈</h1>
                 </div>
             </div>
         </div>
@@ -483,9 +483,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E6%A0%88%E4%B8%8E%E9%98%9F%E5%88%97/">
+                                <span class="chip bg-color">栈与队列</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -493,8 +497,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/KMP%E7%AE%97%E6%B3%95/" class="post-category">
-                                KMP算法
+                            <a href="/categories/%E5%8D%95%E8%B0%83%E6%A0%88/" class="post-category">
+                                单调栈
                             </a>
                         
                     </div>
@@ -506,7 +510,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2024-04-25
+                    2024-05-03
                 </div>
                 
 
@@ -515,7 +519,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    750
+                    493
                 </div>
                 
 
@@ -537,18 +541,8 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="例：aab"><a href="#例：aab" class="headerlink" title="例：aab"></a>例：aab</h2><h2 id="前缀：a-aa-要包含首字母，不包含尾字母"><a href="#前缀：a-aa-要包含首字母，不包含尾字母" class="headerlink" title="前缀：a,aa(要包含首字母，不包含尾字母)"></a>前缀：a,aa(要包含首字母，不包含尾字母)</h2><h2 id="后缀：b-ab（要包含尾字母，不包含首字母）"><a href="#后缀：b-ab（要包含尾字母，不包含首字母）" class="headerlink" title="后缀：b,ab（要包含尾字母，不包含首字母）"></a>后缀：b,ab（要包含尾字母，不包含首字母）</h2><h2 id="最长的前缀：aa"><a href="#最长的前缀：aa" class="headerlink" title="最长的前缀：aa"></a>最长的前缀：aa</h2><h2 id="最长的后缀：ab"><a href="#最长的后缀：ab" class="headerlink" title="最长的后缀：ab"></a>最长的后缀：ab</h2><h2 id=""><a href="#" class="headerlink" title=""></a></h2><h2 id="next数组就是一个前缀表（prefix-table）"><a href="#next数组就是一个前缀表（prefix-table）" class="headerlink" title="next数组就是一个前缀表（prefix table）"></a>next数组就是一个前缀表（prefix table）</h2><h3 id="KMP是根据模式串来获取next-数组的！！"><a href="#KMP是根据模式串来获取next-数组的！！" class="headerlink" title="KMP是根据模式串来获取next[ ] 数组的！！"></a>KMP是根据模式串来获取next[ ] 数组的！！</h3><h3 id="前缀表有什么作用呢？"><a href="#前缀表有什么作用呢？" class="headerlink" title="前缀表有什么作用呢？"></a>前缀表有什么作用呢？</h3><h3 id="前缀表是用来回退的，它记录了模式串与主串-文本串-不匹配的时候，模式串应该从哪里开始重新匹配。"><a href="#前缀表是用来回退的，它记录了模式串与主串-文本串-不匹配的时候，模式串应该从哪里开始重新匹配。" class="headerlink" title="前缀表是用来回退的，它记录了模式串与主串(文本串)不匹配的时候，模式串应该从哪里开始重新匹配。"></a><strong>前缀表是用来回退的，它记录了模式串与主串(文本串)不匹配的时候，模式串应该从哪里开始重新匹配。</strong></h3><p>sss<img src="https://code-thinking.cdn.bcebos.com/gifs/KMP%E7%B2%BE%E8%AE%B21.gif" alt="KMP详解1" style="zoom: 200%;"></p>
-<h2 id="最长公共前后缀"><a href="#最长公共前后缀" class="headerlink" title="最长公共前后缀"></a>最长公共前后缀</h2><h3 id="文章中字符串的前缀是指不包含最后一个字符的所有以第一个字符开头的连续子串。"><a href="#文章中字符串的前缀是指不包含最后一个字符的所有以第一个字符开头的连续子串。" class="headerlink" title="文章中字符串的前缀是指不包含最后一个字符的所有以第一个字符开头的连续子串。"></a>文章中字符串的<strong>前缀是指不包含最后一个字符的所有以第一个字符开头的连续子串</strong>。</h3><h3 id="后缀是指不包含第一个字符的所有以最后一个字符结尾的连续子串。"><a href="#后缀是指不包含第一个字符的所有以最后一个字符结尾的连续子串。" class="headerlink" title="后缀是指不包含第一个字符的所有以最后一个字符结尾的连续子串。"></a><strong>后缀是指不包含第一个字符的所有以最后一个字符结尾的连续子串</strong>。</h3><img src="https://code-thinking.cdn.bcebos.com/gifs/KMP%E7%B2%BE%E8%AE%B22.gif" alt="KMP精讲2" style="zoom:150%;">
-
-<h2 id="以下我们以前缀表统一减一之后的next数组来做演示。"><a href="#以下我们以前缀表统一减一之后的next数组来做演示。" class="headerlink" title="以下我们以前缀表统一减一之后的next数组来做演示。"></a><strong>以下我们以前缀表统一减一之后的next数组来做演示</strong>。</h2><h3 id="有了next数组，就可以根据next数组来-匹配文本串s，和模式串t了。"><a href="#有了next数组，就可以根据next数组来-匹配文本串s，和模式串t了。" class="headerlink" title="有了next数组，就可以根据next数组来 匹配文本串s，和模式串t了。"></a>有了next数组，就可以根据next数组来 匹配文本串s，和模式串t了。</h3><h3 id="注意next数组是新前缀表（旧前缀表统一减一了）。"><a href="#注意next数组是新前缀表（旧前缀表统一减一了）。" class="headerlink" title="注意next数组是新前缀表（旧前缀表统一减一了）。"></a>注意next数组是新前缀表（旧前缀表统一减一了）。</h3><h3 id="匹配过程动画如下："><a href="#匹配过程动画如下：" class="headerlink" title="匹配过程动画如下："></a>匹配过程动画如下：</h3><img src="https://code-thinking.cdn.bcebos.com/gifs/KMP%E7%B2%BE%E8%AE%B24.gif" alt="KMP精讲4" style="zoom: 150%;">
-
-
-
-<h2 id="找出字符串中第一个匹配项的下标-LK028"><a href="#找出字符串中第一个匹配项的下标-LK028" class="headerlink" title="找出字符串中第一个匹配项的下标:LK028"></a>找出字符串中第一个匹配项的下标:LK028</h2><h3 id="通过模式串的前缀表即next数组来匹配文本串！！"><a href="#通过模式串的前缀表即next数组来匹配文本串！！" class="headerlink" title="通过模式串的前缀表即next数组来匹配文本串！！"></a>通过模式串的前缀表即next数组来匹配文本串！！</h3><h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">package org.example.技巧.KMP算法;</span><br><span class="line"></span><br><span class="line">public class num028 {</span><br><span class="line">    public int strStr(String haystack, String needle) {</span><br><span class="line">        // 如果needle的长度为0，则返回0</span><br><span class="line">        if (needle.length() == 0) return 0;</span><br><span class="line">        // 创建一个next数组，用于存储needle的最长公共前缀和后缀的长度</span><br><span class="line">        int[] next = new int[needle.length()];</span><br><span class="line">        // 调用getNext方法，计算next数组</span><br><span class="line">        getNext(next, needle);</span><br><span class="line"></span><br><span class="line">        // 初始化j为0</span><br><span class="line">        int j = 0;</span><br><span class="line">        // 遍历haystack</span><br><span class="line">        for (int i = 0; i &lt; haystack.length(); i++) {</span><br><span class="line">            // 如果j大于0，且needle的j位置的字符不等于haystack的i位置的字符，则将j置为next[j-1]</span><br><span class="line">            while (j &gt; 0 &amp;&amp; needle.charAt(j) != haystack.charAt(i))</span><br><span class="line">                j = next[j - 1];</span><br><span class="line">            // 如果needle的j位置的字符等于haystack的i位置的字符，则j加1</span><br><span class="line">            if (needle.charAt(j) == haystack.charAt(i))</span><br><span class="line">                j++;</span><br><span class="line">            // 如果j等于needle的长度，则说明找到了needle，返回i-needle.length()+1</span><br><span class="line">            if (j == needle.length())</span><br><span class="line">                return i - needle.length() + 1;</span><br><span class="line">        }</span><br><span class="line">        // 如果没有找到needle，则返回-1</span><br><span class="line">        return -1;</span><br><span class="line"></span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    private void getNext(int[] next, String s) {</span><br><span class="line">        // 初始化j为0</span><br><span class="line">        int j = 0;</span><br><span class="line">        // 将next[0]置为0</span><br><span class="line">        next[0] = 0;</span><br><span class="line">        // 遍历s</span><br><span class="line">        for (int i = 1; i &lt; s.length(); i++) {</span><br><span class="line">            // 如果j大于0，且s的j位置的字符不等于s的i位置的字符，则将j置为next[j-1]</span><br><span class="line">            while (j &gt; 0 &amp;&amp; s.charAt(j) != s.charAt(i))</span><br><span class="line">                j = next[j - 1];</span><br><span class="line">            // 如果s的j位置的字符等于s的i位置的字符，则j加1</span><br><span class="line">            if (s.charAt(j) == s.charAt(i))</span><br><span class="line">                j++;</span><br><span class="line">            // 将next[i]置为j</span><br><span class="line">            next[i] = j;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
-
-
-<h2 id="重复的子字符串-LK459"><a href="#重复的子字符串-LK459" class="headerlink" title="重复的子字符串:LK459"></a>重复的子字符串:LK459</h2><h3 id="代码：-1"><a href="#代码：-1" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">package org.example.技巧.KMP算法;</span><br><span class="line"></span><br><span class="line">public class num459 {</span><br><span class="line">    public boolean repeatedSubstringPattern(String s) {</span><br><span class="line">        //KMP算法</span><br><span class="line">        if (s.equals(""))return false;</span><br><span class="line">        int length = s.length();</span><br><span class="line">        char[] chars = s.toCharArray();</span><br><span class="line">        //初始化</span><br><span class="line">        int j = 0;</span><br><span class="line">        int[] next = new int[length];</span><br><span class="line">        next[0] = 0;</span><br><span class="line">        for (int i = 1; i &lt; length; i++) {</span><br><span class="line">            //不相同</span><br><span class="line">            while (j &gt; 0 &amp;&amp; chars[i] != chars[j]){j = next[j - 1];}</span><br><span class="line">            //相同</span><br><span class="line">            if (chars[i] == chars[j]){j ++;}</span><br><span class="line">            //更新</span><br><span class="line">            next[i] = j;</span><br><span class="line">        }</span><br><span class="line">        if (next[length - 1] &gt; 0 &amp;&amp; length % (length - next[length - 1]) == 0){</span><br><span class="line">            return true;</span><br><span class="line">        }</span><br><span class="line">        return false;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+                <p>#柱状图中最大的矩形：LK084</p>
+<h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br></pre></td><td class="code"><pre><span class="line">package org.example.单调栈;</span><br><span class="line"></span><br><span class="line">import java.util.Arrays;</span><br><span class="line">import java.util.Stack;</span><br><span class="line"></span><br><span class="line">public class LK084 {</span><br><span class="line">    public int largestRectangleArea3(int[] heights) {</span><br><span class="line"></span><br><span class="line">        int[] newHeight = new int[heights.length + 2];</span><br><span class="line">        System.arraycopy(heights, 0, newHeight, 1, heights.length);</span><br><span class="line">        newHeight[heights.length+1] = 0;</span><br><span class="line">        newHeight[0] = 0;</span><br><span class="line"></span><br><span class="line">        Stack&lt;Integer&gt; stack = new Stack&lt;&gt;();</span><br><span class="line">        stack.push(0);</span><br><span class="line"></span><br><span class="line">        int res = 0;</span><br><span class="line">        for (int i = 1; i &lt; newHeight.length; i++) {</span><br><span class="line">            while (newHeight[i] &lt; newHeight[stack.peek()]) {</span><br><span class="line">                int mid = stack.pop();</span><br><span class="line">                int w = i - stack.peek() - 1;</span><br><span class="line">                int h = newHeight[mid];</span><br><span class="line">                res = Math.max(res, w * h);</span><br><span class="line">            }</span><br><span class="line">            stack.push(i);</span><br><span class="line">        }</span><br><span class="line">        return res;</span><br><span class="line">    }</span><br><span class="line">    int largestRectangleArea2(int[] heights) {</span><br><span class="line">        Stack&lt;Integer&gt; st = new Stack&lt;Integer&gt;();</span><br><span class="line"></span><br><span class="line">        // 数组扩容，在头和尾各加入一个元素</span><br><span class="line">        int [] newHeights = new int[heights.length + 2];</span><br><span class="line">        newHeights[0] = 0;</span><br><span class="line">        newHeights[newHeights.length - 1] = 0;</span><br><span class="line">        for (int index = 0; index &lt; heights.length; index++){</span><br><span class="line">            newHeights[index + 1] = heights[index];</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        heights = newHeights;</span><br><span class="line"></span><br><span class="line">        st.push(0);</span><br><span class="line">        int result = 0;</span><br><span class="line">        // 第一个元素已经入栈，从下标1开始</span><br><span class="line">        for (int i = 1; i &lt; heights.length; i++) {</span><br><span class="line">            // 注意heights[i] 是和heights[st.top()] 比较 ，st.top()是下标</span><br><span class="line">            if (heights[i] &gt; heights[st.peek()]) {</span><br><span class="line">                st.push(i);</span><br><span class="line">            } else if (heights[i] == heights[st.peek()]) {</span><br><span class="line">                st.pop(); // 这个可以加，可以不加，效果一样，思路不同</span><br><span class="line">                st.push(i);</span><br><span class="line">            } else {</span><br><span class="line">                while (heights[i] &lt; heights[st.peek()]) { // 注意是while</span><br><span class="line">                    int mid = st.peek();</span><br><span class="line">                    st.pop();</span><br><span class="line">                    int left = st.peek();</span><br><span class="line">                    int right = i;</span><br><span class="line">                    int w = right - left - 1;</span><br><span class="line">                    int h = heights[mid];</span><br><span class="line">                    result = Math.max(result, w * h);</span><br><span class="line">                }</span><br><span class="line">                st.push(i);</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        return result;</span><br><span class="line">    }</span><br><span class="line">    public int largestRectangleArea(int[] heights) {</span><br><span class="line">        int length = heights.length;</span><br><span class="line">        int[] minLeftIndex = new int [length];</span><br><span class="line">        int[] minRightIndex = new int [length];</span><br><span class="line">        // 记录左边第一个小于该柱子的下标</span><br><span class="line">        minLeftIndex[0] = -1 ;</span><br><span class="line">        for (int i = 1; i &lt; length; i++) {</span><br><span class="line">            int t = i - 1;</span><br><span class="line">            // 这里不是用if，而是不断向右寻找的过程</span><br><span class="line">            while (t &gt;= 0 &amp;&amp; heights[t] &gt;= heights[i]) t = minLeftIndex[t];</span><br><span class="line">            minLeftIndex[i] = t;</span><br><span class="line">        }</span><br><span class="line">        // 记录每个柱子右边第一个小于该柱子的下标</span><br><span class="line">        minRightIndex[length - 1] = length;</span><br><span class="line">        for (int i = length - 2; i &gt;= 0; i--) {</span><br><span class="line">            int t = i + 1;</span><br><span class="line">            while(t &lt; length &amp;&amp; heights[t] &gt;= heights[i]) t = minRightIndex[t];</span><br><span class="line">            minRightIndex[i] = t;</span><br><span class="line">        }</span><br><span class="line">        // 求和</span><br><span class="line">        int result = 0;</span><br><span class="line">        for (int i = 0; i &lt; length; i++) {</span><br><span class="line">            int sum = heights[i] * (minRightIndex[i] - minLeftIndex[i] - 1);</span><br><span class="line">            result = Math.max(sum, result);</span><br><span class="line">        }</span><br><span class="line">        return result;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) {</span><br><span class="line">        int[] heights = {2,4};</span><br><span class="line">        LK084 lk084 = new LK084();</span><br><span class="line">        int size = lk084.largestRectangleArea(heights);</span><br><span class="line">        System.out.println(size);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
                 
             </div>
             <hr/>
@@ -574,7 +568,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://cyc199811.github.io/2024/04/25/KMP%E7%AE%97%E6%B3%95/">https://cyc199811.github.io/2024/04/25/KMP%E7%AE%97%E6%B3%95/</a>
+                    <a href="https://cyc199811.github.io/2024/05/03/%E5%8D%95%E8%B0%83%E6%A0%88/">https://cyc199811.github.io/2024/05/03/%E5%8D%95%E8%B0%83%E6%A0%88/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -611,7 +605,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E6%A0%88%E4%B8%8E%E9%98%9F%E5%88%97/">
+                                    <span class="chip bg-color">栈与队列</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -783,13 +781,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2024/04/26/%E7%94%A8%E9%98%9F%E5%88%97%E5%AE%9E%E7%8E%B0%E6%A0%88/">
+                <a href="/2024/05/03/day14/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="用队列实现栈">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="day011">
                         
-                        <span class="card-title">用队列实现栈</span>
+                        <span class="card-title">day011</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -800,8 +798,57 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-04-26
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-05-03
                         </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%9A%84%E5%AE%9E%E7%8E%B0/" class="post-category">
+                                    基本数据结构的实现
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86/">
+                        <span class="chip bg-color">二叉树的遍历</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2024/05/02/day13/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="day09">
+                        
+                        <span class="card-title">day09</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-05-02
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -821,47 +868,14 @@
                         <span class="chip bg-color">栈与队列</span>
                     </a>
                     
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2024/04/25/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E4%B9%8B%E8%83%8C%E5%8C%85/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="动态规划">
-                        
-                        <span class="card-title">动态规划</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-04-25
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E4%B9%A6%E5%8C%85%E9%97%AE%E9%A2%98/" class="post-category">
-                                    动态规划书包问题
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
+                    <a href="/tags/%E4%BC%98%E5%85%88%E7%BA%A7%E9%98%9F%E5%88%97/">
+                        <span class="chip bg-color">优先级队列</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%B0%8F%E9%A1%B6%E5%A0%86/">
+                        <span class="chip bg-color">小顶堆</span>
+                    </a>
+                    
                 </div>
                 
             </div>
