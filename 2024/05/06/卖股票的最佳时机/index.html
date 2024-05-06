@@ -5,7 +5,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="day012, 程玉春的博客">
+    <meta name="keywords" content="卖股票的最佳时机, 程玉春的博客">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>day012 | 程玉春的博客</title>
+    <title>卖股票的最佳时机 | 程玉春的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -364,12 +364,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">day012</h1>
+                    <h1 class="description center-align post-title">卖股票的最佳时机</h1>
                 </div>
             </div>
         </div>
@@ -485,16 +485,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E9%80%92%E5%BD%92/">
-                                <span class="chip bg-color">递归</span>
-                            </a>
-                        
-                            <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86/">
-                                <span class="chip bg-color">二叉树的遍历</span>
-                            </a>
-                        
-                            <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/">
-                                <span class="chip bg-color">二叉树</span>
+                            <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
+                                <span class="chip bg-color">动态规划</span>
                             </a>
                         
                     </div>
@@ -505,8 +497,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95%E6%AF%8F%E6%97%A5%E5%88%B7%E9%A2%98/" class="post-category">
-                                代码随想录每日刷题
+                            <a href="/categories/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" class="post-category">
+                                动态规划
                             </a>
                         
                     </div>
@@ -518,7 +510,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2024-05-04
+                    2024-05-06
                 </div>
                 
 
@@ -527,7 +519,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    700
+                    362
                 </div>
                 
 
@@ -549,9 +541,17 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="二叉树的统一迭代法："><a href="#二叉树的统一迭代法：" class="headerlink" title="二叉树的统一迭代法："></a>二叉树的统一迭代法：</h1><h2 id="思路：利用栈的先进后出规则，并添加-null-值进行遍历"><a href="#思路：利用栈的先进后出规则，并添加-null-值进行遍历" class="headerlink" title="思路：利用栈的先进后出规则，并添加 null 值进行遍历"></a>思路：利用栈的先进后出规则，并添加 null 值进行遍历</h2><h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br></pre></td><td class="code"><pre><span class="line">package org.example.二叉树;</span><br><span class="line"></span><br><span class="line">import java.util.ArrayList;</span><br><span class="line">import java.util.Collections;</span><br><span class="line">import java.util.List;</span><br><span class="line">import java.util.Stack;</span><br><span class="line"></span><br><span class="line">public class Tree1 {</span><br><span class="line"></span><br><span class="line">    public class TreeNode {</span><br><span class="line">        int val;</span><br><span class="line">        TreeNode left;</span><br><span class="line">        TreeNode right;</span><br><span class="line"></span><br><span class="line">        public TreeNode() {</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        public TreeNode(int val) {</span><br><span class="line">            this.val = val;</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        public TreeNode(int val, TreeNode left, TreeNode right) {</span><br><span class="line">            this.val = val;</span><br><span class="line">            this.left = left;</span><br><span class="line">            this.right = right;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    // 前序遍历顺序：中-左-右，入栈顺序：右-左-中</span><br><span class="line">    public List&lt;Integer&gt; preorderTraversal(TreeNode root){</span><br><span class="line">        ArrayList&lt;Integer&gt; result = new ArrayList&lt;&gt;();</span><br><span class="line">        Stack&lt;TreeNode&gt; stack = new Stack&lt;&gt;();</span><br><span class="line">        if (root != null){</span><br><span class="line">            stack.push(root);</span><br><span class="line">        }</span><br><span class="line">        while (!stack.isEmpty()){</span><br><span class="line">            TreeNode node = stack.peek();</span><br><span class="line">            //节点的入栈顺序和遍历的完全相反</span><br><span class="line">            if (node != null){</span><br><span class="line">                stack.pop();</span><br><span class="line">                if (node.right != null){</span><br><span class="line">                    stack.push(node.right);</span><br><span class="line">                }</span><br><span class="line">                if (node.left != null){</span><br><span class="line">                    stack.push(node.left);</span><br><span class="line">                }</span><br><span class="line">                stack.push(node);</span><br><span class="line"></span><br><span class="line">                stack.push(null);// 中节点访问过，但是还没有处理，加入空节点做为标记。</span><br><span class="line">            }else {</span><br><span class="line">                stack.pop();//将空节点弹出栈</span><br><span class="line">                node = stack.peek();//重新取出栈中元素</span><br><span class="line">                stack.pop();</span><br><span class="line">                result.add(node.val);//收集结果</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        return result;</span><br><span class="line">    }</span><br><span class="line">    // 中序遍历顺序: 左-中-右 入栈顺序： 右-中-左</span><br><span class="line">    public List&lt;Integer&gt; inorderTraversal(TreeNode root) {</span><br><span class="line">        List&lt;Integer&gt; result = new ArrayList&lt;&gt;();</span><br><span class="line">        Stack&lt;TreeNode&gt; stack = new Stack&lt;&gt;();</span><br><span class="line">        if (root != null){</span><br><span class="line">        stack.push(root);</span><br><span class="line">        }</span><br><span class="line">        while (!stack.isEmpty()){</span><br><span class="line">            TreeNode node = stack.peek();</span><br><span class="line">            if (node != null){</span><br><span class="line">                stack.pop();</span><br><span class="line">                if (node.right != null){</span><br><span class="line">                    stack.push(node.right);</span><br><span class="line">                }</span><br><span class="line">                stack.push(node);</span><br><span class="line">                stack.push(null);</span><br><span class="line">                if (node.left != null){</span><br><span class="line">                    stack.push(node.left);</span><br><span class="line">                }</span><br><span class="line">            }else {</span><br><span class="line">                stack.pop();</span><br><span class="line">                node = stack.peek();</span><br><span class="line">                stack.pop();</span><br><span class="line">                result.add(node.val);</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        return result;</span><br><span class="line">    }</span><br><span class="line">    // 后序遍历顺序 左-右-中 入栈顺序：中-右-左</span><br><span class="line">    public List&lt;Integer&gt; postorderTraversal(TreeNode root) {</span><br><span class="line">        List&lt;Integer&gt; result = new ArrayList&lt;&gt;();</span><br><span class="line">        Stack&lt;TreeNode&gt; stack = new Stack&lt;&gt;();</span><br><span class="line">        if (root != null){</span><br><span class="line">            stack.push(root);</span><br><span class="line">        }</span><br><span class="line">        while (!stack.isEmpty()){</span><br><span class="line">            TreeNode node = stack.peek();</span><br><span class="line">            if (node != null){</span><br><span class="line">                stack.pop();</span><br><span class="line">                stack.push(node);</span><br><span class="line">                stack.push(null);</span><br><span class="line">                if (node.right != null){</span><br><span class="line">                    stack.push(node.right);</span><br><span class="line">                }</span><br><span class="line">                if (node.left != null){</span><br><span class="line">                    stack.push(node.left);</span><br><span class="line">                }</span><br><span class="line">            }else {</span><br><span class="line">                stack.pop();</span><br><span class="line">                node = stack.peek();</span><br><span class="line">                stack.pop();</span><br><span class="line">                result.add(node.val);</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        return result;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+                <h2 id="卖股票的最佳时机1：LK121"><a href="#卖股票的最佳时机1：LK121" class="headerlink" title="卖股票的最佳时机1：LK121"></a>卖股票的最佳时机1：LK121</h2><h3 id="思路：dp-i-0-代表第i天持有股票的最大收益"><a href="#思路：dp-i-0-代表第i天持有股票的最大收益" class="headerlink" title="思路：dp[i][0]代表第i天持有股票的最大收益"></a>思路：dp[i][0]代表第i天持有股票的最大收益</h3><pre><code>      dp[i][1]代表第i天不持有股票的最大收益
+</code></pre>
+<h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">package org.example.动态规划;</span><br><span class="line"></span><br><span class="line">public class LK121 {</span><br><span class="line">    public int maxProfit(int[] prices) {</span><br><span class="line">        if (prices == null || prices.length == 0) return 0;</span><br><span class="line">        int length = prices.length;</span><br><span class="line">        </span><br><span class="line">        int[][] dp = new int[length][2];</span><br><span class="line">        int result = 0;</span><br><span class="line">        dp[0][0] = -prices[0];</span><br><span class="line">        dp[0][1] = 0;</span><br><span class="line">        for (int i = 1; i &lt; length; i++) {</span><br><span class="line">            dp[i][0] = Math.max(dp[i - 1][0], -prices[i]);</span><br><span class="line">            dp[i][1] = Math.max(dp[i - 1][0] + prices[i], dp[i - 1][1]);</span><br><span class="line">        }</span><br><span class="line">        return dp[length - 1][1];</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
-<h1 id="二叉树的层序遍历："><a href="#二叉树的层序遍历：" class="headerlink" title="二叉树的层序遍历："></a>二叉树的层序遍历：</h1><h2 id="思路：类似前序遍历，但要每层进行结果收集"><a href="#思路：类似前序遍历，但要每层进行结果收集" class="headerlink" title="思路：类似前序遍历，但要每层进行结果收集"></a>思路：类似前序遍历，但要每层进行结果收集</h2><h3 id="代码：-1"><a href="#代码：-1" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line">package org.example.二叉树;</span><br><span class="line"></span><br><span class="line">import java.util.*;</span><br><span class="line"></span><br><span class="line">public class TreeLevelOrder {</span><br><span class="line"></span><br><span class="line">    public class TreeNode {</span><br><span class="line">        int val;</span><br><span class="line">        TreeNode left;</span><br><span class="line">        TreeNode right;</span><br><span class="line"></span><br><span class="line">        public TreeNode() {</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        public TreeNode(int val) {</span><br><span class="line">            this.val = val;</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        public TreeNode(int val, TreeNode left, TreeNode right) {</span><br><span class="line">            this.val = val;</span><br><span class="line">            this.left = left;</span><br><span class="line">            this.right = right;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    public List&lt;List&lt;Integer&gt;&gt; resList = new ArrayList&lt;List&lt;Integer&gt;&gt;();</span><br><span class="line"></span><br><span class="line">    public List&lt;List&lt;Integer&gt;&gt; levelOrder(TreeNode root) {</span><br><span class="line">        //checkFun01(root,0);</span><br><span class="line">        checkFun02(root);</span><br><span class="line"></span><br><span class="line">        return resList;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    //DFS--递归方式</span><br><span class="line">    public void checkFun01(TreeNode node, Integer deep) {</span><br><span class="line">        if (node == null) return;</span><br><span class="line">        deep++;</span><br><span class="line"></span><br><span class="line">        if (resList.size() &lt; deep) {</span><br><span class="line">            //当层级增加时，list的Item也增加，利用list的索引值进行层级界定</span><br><span class="line">            List&lt;Integer&gt; item = new ArrayList&lt;Integer&gt;();</span><br><span class="line">            resList.add(item);</span><br><span class="line">        }</span><br><span class="line">        resList.get(deep - 1).add(node.val);</span><br><span class="line"></span><br><span class="line">        checkFun01(node.left, deep);</span><br><span class="line">        checkFun01(node.right, deep);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    //BFS--迭代方式--借助队列</span><br><span class="line">    public void checkFun02(TreeNode node) {</span><br><span class="line">        if (node == null) return;</span><br><span class="line">        Queue&lt;TreeNode&gt; que = new LinkedList&lt;TreeNode&gt;();</span><br><span class="line">        que.offer(node);</span><br><span class="line"></span><br><span class="line">        while (!que.isEmpty()) {</span><br><span class="line">            List&lt;Integer&gt; itemList = new ArrayList&lt;Integer&gt;();</span><br><span class="line">            int len = que.size();</span><br><span class="line"></span><br><span class="line">            while (len &gt; 0) {</span><br><span class="line">                TreeNode tmpNode = que.poll();</span><br><span class="line">                itemList.add(tmpNode.val);</span><br><span class="line"></span><br><span class="line">                if (tmpNode.left != null) que.offer(tmpNode.left);</span><br><span class="line">                if (tmpNode.right != null) que.offer(tmpNode.right);</span><br><span class="line">                len--;</span><br><span class="line">            }</span><br><span class="line"></span><br><span class="line">            resList.add(itemList);</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="卖股票的最佳时机2：LK122"><a href="#卖股票的最佳时机2：LK122" class="headerlink" title="卖股票的最佳时机2：LK122"></a>卖股票的最佳时机2：LK122</h2><h3 id="思路：dp-i-0-代表第i天持有股票的最大收益-1"><a href="#思路：dp-i-0-代表第i天持有股票的最大收益-1" class="headerlink" title="思路：dp[i][0]代表第i天持有股票的最大收益"></a>思路：dp[i][0]代表第i天持有股票的最大收益</h3><pre><code>      dp[i][1]代表第i天不持有股票的最大收益
+</code></pre>
+<h3 id="如果第i天持有股票即dp-i-0-，-那么可以由两个状态推出来"><a href="#如果第i天持有股票即dp-i-0-，-那么可以由两个状态推出来" class="headerlink" title="如果第i天持有股票即dp[i][0]， 那么可以由两个状态推出来"></a>如果第i天持有股票即dp[i][0]， 那么可以由两个状态推出来</h3><ul>
+<li>第i-1天就持有股票，那么就保持现状，所得现金就是昨天持有股票的所得现金 即：dp[i - 1][0]</li>
+<li>第i天买入股票，所得现金就是昨天不持有股票的所得现金减去 今天的股票价格 即：dp[i - 1][1] - prices[i]</li>
+</ul>
+<h3 id="代码：-1"><a href="#代码：-1" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">package org.example.动态规划;</span><br><span class="line"></span><br><span class="line">public class LK122 {</span><br><span class="line">    public int maxProfit(int[] prices) {</span><br><span class="line">        int n = prices.length;</span><br><span class="line">        int[][] dp = new int[n][2];</span><br><span class="line">        dp[0][0] = 0;</span><br><span class="line">        dp[0][1] = -prices[0];</span><br><span class="line">        for (int i = 1; i &lt; n; ++i) {</span><br><span class="line">            dp[i][0] = Math.max(dp[i - 1][0], dp[i - 1][1] + prices[i]);</span><br><span class="line">            dp[i][1] = Math.max(dp[i - 1][1], dp[i - 1][0] - prices[i]);</span><br><span class="line">        }</span><br><span class="line">        return dp[n - 1][0];</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
                 
             </div>
             <hr/>
@@ -577,7 +577,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://cyc199811.github.io/2024/05/04/day15/">https://cyc199811.github.io/2024/05/04/day15/</a>
+                    <a href="https://cyc199811.github.io/2024/05/06/%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA/">https://cyc199811.github.io/2024/05/06/%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -615,16 +615,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E9%80%92%E5%BD%92/">
-                                    <span class="chip bg-color">递归</span>
-                                </a>
-                            
-                                <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86/">
-                                    <span class="chip bg-color">二叉树的遍历</span>
-                                </a>
-                            
-                                <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/">
-                                    <span class="chip bg-color">二叉树</span>
+                                <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
+                                    <span class="chip bg-color">动态规划</span>
                                 </a>
                             
                         </div>
@@ -794,17 +786,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2024/05/05/day20/">
+                <a href="/2024/05/06/%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="day015">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="卖股票的最佳时机">
                         
-                        <span class="card-title">day015</span>
+                        <span class="card-title">卖股票的最佳时机</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -814,34 +807,27 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-05-05
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-05-06
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95%E6%AF%8F%E6%97%A5%E5%88%B7%E9%A2%98/" class="post-category">
-                                    代码随想录每日刷题
+                            <a href="/categories/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" class="post-category">
+                                    动态规划
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E9%80%92%E5%BD%92/">
-                        <span class="chip bg-color">递归</span>
-                    </a>
-                    
-                    <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/">
-                        <span class="chip bg-color">二叉树</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">回溯算法</span>
+                    <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
+                        <span class="chip bg-color">动态规划</span>
                     </a>
                     
                 </div>
@@ -855,13 +841,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2024/05/04/day18/">
+                <a href="/2024/05/05/day19/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="day013">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="day014">
                         
-                        <span class="card-title">day013</span>
+                        <span class="card-title">day014</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -872,7 +858,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-05-04
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-05-05
                             </span>
                         <span class="publish-author">
                             
