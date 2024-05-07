@@ -5,7 +5,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="day04, 程玉春的博客">
+    <meta name="keywords" content="day016, 程玉春的博客">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>day04 | 程玉春的博客</title>
+    <title>day016 | 程玉春的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -364,12 +364,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">day04</h1>
+                    <h1 class="description center-align post-title">day016</h1>
                 </div>
             </div>
         </div>
@@ -485,12 +485,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E9%93%BE%E8%A1%A8/">
-                                <span class="chip bg-color">链表</span>
-                            </a>
-                        
                             <a href="/tags/%E9%80%92%E5%BD%92/">
                                 <span class="chip bg-color">递归</span>
+                            </a>
+                        
+                            <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/">
+                                <span class="chip bg-color">二叉树</span>
                             </a>
                         
                     </div>
@@ -514,7 +514,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2024-04-20
+                    2024-05-07
                 </div>
                 
 
@@ -523,7 +523,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    643
+                    538
                 </div>
                 
 
@@ -545,25 +545,13 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="两两交换链表：LK029"><a href="#两两交换链表：LK029" class="headerlink" title="两两交换链表：LK029"></a>两两交换链表：LK029</h2><p>比较明显且容易想到的就是递归：</p>
-<p>1.确定函数及参数返回值</p>
-<p>2.确定终止条件</p>
-<p>3.确定下一轮递归的条件和值</p>
-<p>代码：</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">package org.example.链表;</span><br><span class="line"></span><br><span class="line">public class num024 {</span><br><span class="line">    public class ListNode {</span><br><span class="line">        int val;</span><br><span class="line">        ListNode next;</span><br><span class="line">        ListNode() {}</span><br><span class="line">        ListNode(int val) { this.val = val; }</span><br><span class="line">        ListNode(int val, ListNode next) { this.val = val; this.next = next; }</span><br><span class="line">    }</span><br><span class="line">    public ListNode swapPairs(ListNode head) {</span><br><span class="line">        // base case 退出提交</span><br><span class="line">        if(head == null || head.next == null) return head;</span><br><span class="line">        // 获取当前节点的下一个节点</span><br><span class="line">        ListNode next = head.next;</span><br><span class="line">        // 进行递归</span><br><span class="line">        ListNode newNode = swapPairs(next.next);</span><br><span class="line">        // 这里进行交换</span><br><span class="line">        next.next = head;</span><br><span class="line">        head.next = newNode;</span><br><span class="line"></span><br><span class="line">        return next;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+                <h2 id="找树左下角的值：LK513"><a href="#找树左下角的值：LK513" class="headerlink" title="找树左下角的值：LK513"></a>找树左下角的值：LK513</h2><h3 id="思路：记录每一个做子叶节点的值，最后一个就是左下角的值"><a href="#思路：记录每一个做子叶节点的值，最后一个就是左下角的值" class="headerlink" title="思路：记录每一个做子叶节点的值，最后一个就是左下角的值"></a>思路：记录每一个做子叶节点的值，最后一个就是左下角的值</h3><h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">package org.example.二叉树;</span><br><span class="line"></span><br><span class="line">import java.util.LinkedList;</span><br><span class="line">import java.util.Queue;</span><br><span class="line"></span><br><span class="line">public class LK513 {</span><br><span class="line">    class TreeNode {</span><br><span class="line">        TreeNode left;</span><br><span class="line">        int val;</span><br><span class="line">        TreeNode right;</span><br><span class="line"></span><br><span class="line">        public TreeNode(TreeNode left, int val,TreeNode right) {</span><br><span class="line">            this.left = left;</span><br><span class="line">            this.val = val;</span><br><span class="line">            this.right = right;</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        public TreeNode() {</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    public int findBottomLeftValue(TreeNode root) {</span><br><span class="line">            Queue&lt;TreeNode&gt; queue = new LinkedList&lt;&gt;();</span><br><span class="line">            queue.offer(root);</span><br><span class="line">            int res = 0;</span><br><span class="line">            while (!queue.isEmpty()) {</span><br><span class="line">                int size = queue.size();</span><br><span class="line">                for (int i = 0; i &lt; size; i++) {</span><br><span class="line">                    TreeNode poll = queue.poll();</span><br><span class="line">                    if (i == 0) {</span><br><span class="line">                        res = poll.val;</span><br><span class="line">                    }</span><br><span class="line">                    if (poll.left != null) {</span><br><span class="line">                        queue.offer(poll.left);</span><br><span class="line">                    }</span><br><span class="line">                    if (poll.right != null) {</span><br><span class="line">                        queue.offer(poll.right);</span><br><span class="line">                    }</span><br><span class="line">                }</span><br><span class="line">            }</span><br><span class="line">            return res;</span><br><span class="line">        }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
-<h2 id="删除倒数第n个节点："><a href="#删除倒数第n个节点：" class="headerlink" title="删除倒数第n个节点："></a>删除倒数第n个节点：</h2><p>第一次的：通过遍历链表结合n确定删除的节点的位置</p>
-<p>改进的：通过双指针法来</p>
-<p>代码：（自己开始写的不能通过节点数为2的链表）</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">package org.example.链表;</span><br><span class="line"></span><br><span class="line">public class num019 {</span><br><span class="line">    public class ListNode {</span><br><span class="line">        int val;</span><br><span class="line">        ListNode next;</span><br><span class="line">        ListNode() {}</span><br><span class="line">        ListNode(int val) { this.val = val; }</span><br><span class="line">        ListNode(int val, ListNode next) { this.val = val; this.next = next; }</span><br><span class="line">    }</span><br><span class="line">    public ListNode removeNthFromEnd(ListNode head, int n) {</span><br><span class="line">        ListNode dummyNode = new ListNode(0);</span><br><span class="line">        dummyNode.next = head;</span><br><span class="line">        //确定总共的节点个数</span><br><span class="line">        int count = 0;</span><br><span class="line">        ListNode p = head;</span><br><span class="line">        while (p != null){</span><br><span class="line">            count ++;</span><br><span class="line">            p = p.next;</span><br><span class="line">        }</span><br><span class="line">        if (count == 1){</span><br><span class="line">            return null;</span><br><span class="line">        }</span><br><span class="line">        //确定节点在链表的位置</span><br><span class="line">        int index = count - n;</span><br><span class="line">        ListNode prev = head;</span><br><span class="line">        for (int i = 1; i &lt; index; i++) {</span><br><span class="line">            prev = prev.next;</span><br><span class="line">        }</span><br><span class="line">        //当前要删除的节点</span><br><span class="line">        ListNode cur = prev.next;</span><br><span class="line">        //将指针跳过删除节点就行</span><br><span class="line">        ListNode next = prev.next.next;</span><br><span class="line">        prev.next = next;</span><br><span class="line">        return head;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="路径总和：LK112"><a href="#路径总和：LK112" class="headerlink" title="路径总和：LK112"></a>路径总和：LK112</h2><h3 id="思路：递归遍历每一条路径，并计算路径上的节点的值总和，等于sum-就返回-true"><a href="#思路：递归遍历每一条路径，并计算路径上的节点的值总和，等于sum-就返回-true" class="headerlink" title="思路：递归遍历每一条路径，并计算路径上的节点的值总和，等于sum 就返回 true"></a>思路：递归遍历每一条路径，并计算路径上的节点的值总和，等于sum 就返回 true</h3><h3 id="代码：-1"><a href="#代码：-1" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">package org.example.二叉树;</span><br><span class="line"></span><br><span class="line">public class LK112 {</span><br><span class="line">    class TreeNode {</span><br><span class="line">        TreeNode left;</span><br><span class="line">        int val;</span><br><span class="line">        TreeNode right;</span><br><span class="line"></span><br><span class="line">        public TreeNode(TreeNode left, int val,TreeNode right) {</span><br><span class="line">            this.left = left;</span><br><span class="line">            this.val = val;</span><br><span class="line">            this.right = right;</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        public TreeNode() {</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    public boolean hasPathSum(TreeNode root, int targetSum) {</span><br><span class="line">        if (root == null){</span><br><span class="line">            return false;</span><br><span class="line">        }</span><br><span class="line">        targetSum -= root.val;</span><br><span class="line">    if (root.left ==null &amp;&amp; root.right == null){</span><br><span class="line">        return targetSum == 0;</span><br><span class="line">    }</span><br><span class="line">    if (root.left != null){</span><br><span class="line">        boolean left = hasPathSum(root.left, targetSum);</span><br><span class="line">        if (left == true){</span><br><span class="line">            return true;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    if (root.right != null){</span><br><span class="line">        boolean right = hasPathSum(root.right, targetSum);</span><br><span class="line">        if (right == true){</span><br><span class="line">            return true;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">        return false;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
-<p>代码：（改进版）</p>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> ListNode <span class="title function_">removeNthFromEnd</span><span class="params">(ListNode head, <span class="type">int</span> n)</span>{</span><br><span class="line">    <span class="type">ListNode</span> <span class="variable">dummyNode</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ListNode</span>(<span class="number">0</span>);</span><br><span class="line">    dummyNode.next = head;</span><br><span class="line"></span><br><span class="line">    <span class="type">ListNode</span> <span class="variable">fastIndex</span> <span class="operator">=</span> dummyNode;</span><br><span class="line">    <span class="type">ListNode</span> <span class="variable">slowIndex</span> <span class="operator">=</span> dummyNode;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 只要快慢指针相差 n 个结点即可</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; n  ; i++){ </span><br><span class="line">        fastIndex = fastIndex.next;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (fastIndex != <span class="literal">null</span>){</span><br><span class="line">        fastIndex = fastIndex.next;</span><br><span class="line">        slowIndex = slowIndex.next;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="comment">//此时 slowIndex 的位置就是待删除元素的前一个位置。</span></span><br><span class="line">    <span class="comment">//具体情况可自己画一个链表长度为 3 的图来模拟代码来理解</span></span><br><span class="line">    slowIndex.next = slowIndex.next.next;</span><br><span class="line">    <span class="keyword">return</span> dummyNode.next;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h1 id="从中序与后序遍历序列构造二叉树：LK106"><a href="#从中序与后序遍历序列构造二叉树：LK106" class="headerlink" title="从中序与后序遍历序列构造二叉树：LK106"></a>从中序与后序遍历序列构造二叉树：LK106</h1><h3 id="思路：后序遍历确定根节点"><a href="#思路：后序遍历确定根节点" class="headerlink" title="思路：后序遍历确定根节点"></a>思路：后序遍历确定根节点</h3><h3 id="根据根节点划分中序数组的左右子树"><a href="#根据根节点划分中序数组的左右子树" class="headerlink" title="根据根节点划分中序数组的左右子树"></a>根据根节点划分中序数组的左右子树</h3><img src="/2024/05/07/day21/image-20240507162748144.png" alt="image-20240507162748144" style="zoom: 200%;">
 
-<h2 id="环形链表系列问题：LK142"><a href="#环形链表系列问题：LK142" class="headerlink" title="环形链表系列问题：LK142"></a>环形链表系列问题：LK142</h2><p>1.主要通过快慢指针来进行判断是否存在环</p>
-<p>2.通过第一次相遇的位置得到数学逻辑求出入环口</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">package org.example.链表;</span><br><span class="line"></span><br><span class="line">public class num142 {</span><br><span class="line">    public class ListNode {</span><br><span class="line">        int val;</span><br><span class="line">        ListNode next;</span><br><span class="line">        ListNode() {}</span><br><span class="line">        ListNode(int val) { this.val = val; }</span><br><span class="line">        ListNode(int val, ListNode next) { this.val = val; this.next = next; }</span><br><span class="line">    }</span><br><span class="line">    public ListNode detectCycle(ListNode head) {</span><br><span class="line">        //运用快慢指针来进行判断是否存在环</span><br><span class="line">        //走两步一次</span><br><span class="line">        ListNode fast = head;</span><br><span class="line">        //走一步一次</span><br><span class="line">        ListNode slow = head;</span><br><span class="line">        while (fast != null &amp;&amp; fast.next != null){</span><br><span class="line">            slow = slow.next;</span><br><span class="line">            fast = fast.next.next;</span><br><span class="line">            if (slow == fast) {// 有环</span><br><span class="line">                ListNode index1 = fast;</span><br><span class="line">                ListNode index2 = head;</span><br><span class="line">                // 两个指针，从头结点和相遇结点，各走一步，直到相遇，相遇点即为环入口</span><br><span class="line">                while (index1 != index2) {</span><br><span class="line">                    index1 = index1.next;</span><br><span class="line">                    index2 = index2.next;</span><br><span class="line">                }</span><br><span class="line">                return index1;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        return null;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
+<h3 id="代码：-2"><a href="#代码：-2" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">package org.example.二叉树;</span><br><span class="line"></span><br><span class="line">public class LK106 {</span><br><span class="line">    class TreeNode {</span><br><span class="line">        TreeNode left;</span><br><span class="line">        int val;</span><br><span class="line">        TreeNode right;</span><br><span class="line"></span><br><span class="line">        public TreeNode(TreeNode left, int val,TreeNode right) {</span><br><span class="line">            this.left = left;</span><br><span class="line">            this.val = val;</span><br><span class="line">            this.right = right;</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        public TreeNode(int val) {</span><br><span class="line">            this.val = val;</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        public TreeNode() {</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    public TreeNode buildTree(int[] inorder, int[] postorder) {</span><br><span class="line">        if (inorder.length == 0 || postorder.length == 0){</span><br><span class="line">            return null;</span><br><span class="line">        }</span><br><span class="line">        return buildHelper(inorder, 0, inorder.length, postorder, 0, postorder.length);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    public TreeNode buildHelper(int[] inorder, int inorderStart, int inorderEnd,</span><br><span class="line">                                int[] postorder, int postorderStart, int postorderEnd){</span><br><span class="line">        if (postorderStart == postorderEnd){return null;}</span><br><span class="line">        //找到后序数组的最后一个数确定根元素</span><br><span class="line">        int rootVal = postorder[postorderEnd - 1];</span><br><span class="line">        //构造根节点</span><br><span class="line">        TreeNode root = new TreeNode(rootVal);</span><br><span class="line">        //根据根节点划分中序数组的左右子数组</span><br><span class="line">        int middleIndex;</span><br><span class="line">        for (middleIndex = inorderStart; middleIndex &lt; inorderEnd; middleIndex ++){</span><br><span class="line">            if (inorder[middleIndex] == rootVal){break;}</span><br><span class="line">        }</span><br><span class="line">        //中序数组划分</span><br><span class="line">        int leftInorderStart = inorderStart;//</span><br><span class="line">        int leftInorderEnd = middleIndex;//</span><br><span class="line"></span><br><span class="line">        int rightInorderStart = middleIndex + 1;//</span><br><span class="line">        int rightInorderEnd = inorderEnd;</span><br><span class="line">        //后序数组划分</span><br><span class="line">        int leftPostorderStart = postorderStart;</span><br><span class="line">        int leftPostorderEnd = postorderStart + (middleIndex - inorderStart);//important</span><br><span class="line">        int rightPostorderStart = leftPostorderEnd;</span><br><span class="line">        int rightPostorderEnd = postorderEnd - 1;//除去根节点</span><br><span class="line"></span><br><span class="line">        root.left = buildHelper(inorder, leftInorderStart, leftInorderEnd,  postorder, leftPostorderStart, leftPostorderEnd);</span><br><span class="line">        root.right = buildHelper(inorder, rightInorderStart, rightInorderEnd, postorder, rightPostorderStart, rightPostorderEnd);</span><br><span class="line"></span><br><span class="line">        return root;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
                 
             </div>
             <hr/>
@@ -589,7 +577,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://cyc199811.github.io/2024/04/20/day04/">https://cyc199811.github.io/2024/04/20/day04/</a>
+                    <a href="https://cyc199811.github.io/2024/05/07/day21/">https://cyc199811.github.io/2024/05/07/day21/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -627,12 +615,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E9%93%BE%E8%A1%A8/">
-                                    <span class="chip bg-color">链表</span>
-                                </a>
-                            
                                 <a href="/tags/%E9%80%92%E5%BD%92/">
                                     <span class="chip bg-color">递归</span>
+                                </a>
+                            
+                                <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/">
+                                    <span class="chip bg-color">二叉树</span>
                                 </a>
                             
                         </div>
@@ -802,66 +790,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2024/04/22/day05/">
+                <a href="/2024/05/07/day21/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="day05">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="day016">
                         
-                        <span class="card-title">day05</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-04-22
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95%E6%AF%8F%E6%97%A5%E5%88%B7%E9%A2%98/" class="post-category">
-                                    代码随想录每日刷题
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/">
-                        <span class="chip bg-color">哈希表</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2024/04/20/day03/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="day03">
-                        
-                        <span class="card-title">day03</span>
+                        <span class="card-title">day016</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -872,7 +812,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-04-20
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-05-07
                             </span>
                         <span class="publish-author">
                             
@@ -886,11 +826,65 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E9%93%BE%E8%A1%A8/">
-                        <span class="chip bg-color">链表</span>
+                    <a href="/tags/%E9%80%92%E5%BD%92/">
+                        <span class="chip bg-color">递归</span>
+                    </a>
+                    
+                    <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/">
+                        <span class="chip bg-color">二叉树</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2024/05/06/%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="卖股票的最佳时机">
+                        
+                        <span class="card-title">卖股票的最佳时机</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-05-06
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" class="post-category">
+                                    动态规划
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
+                        <span class="chip bg-color">动态规划</span>
                     </a>
                     
                 </div>
