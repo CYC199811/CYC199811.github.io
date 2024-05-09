@@ -5,7 +5,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="day016, 程玉春的博客">
+    <meta name="keywords" content="day018, 程玉春的博客">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>day016 | 程玉春的博客</title>
+    <title>day018 | 程玉春的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -364,12 +364,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">day016</h1>
+                    <h1 class="description center-align post-title">day018</h1>
                 </div>
             </div>
         </div>
@@ -493,6 +493,10 @@
                                 <span class="chip bg-color">递归</span>
                             </a>
                         
+                            <a href="/tags/%E5%9B%9E%E6%BA%AF/">
+                                <span class="chip bg-color">回溯</span>
+                            </a>
+                        
                     </div>
                     
                 </div>
@@ -514,7 +518,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2024-05-07
+                    2024-05-09
                 </div>
                 
 
@@ -523,7 +527,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    538
+                    577
                 </div>
                 
 
@@ -545,13 +549,11 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="找树左下角的值：LK513"><a href="#找树左下角的值：LK513" class="headerlink" title="找树左下角的值：LK513"></a>找树左下角的值：LK513</h2><h3 id="思路：记录每一个做子叶节点的值，最后一个就是左下角的值"><a href="#思路：记录每一个做子叶节点的值，最后一个就是左下角的值" class="headerlink" title="思路：记录每一个做子叶节点的值，最后一个就是左下角的值"></a>思路：记录每一个做子叶节点的值，最后一个就是左下角的值</h3><h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">package org.example.二叉树;</span><br><span class="line"></span><br><span class="line">import java.util.LinkedList;</span><br><span class="line">import java.util.Queue;</span><br><span class="line"></span><br><span class="line">public class LK513 {</span><br><span class="line">    class TreeNode {</span><br><span class="line">        TreeNode left;</span><br><span class="line">        int val;</span><br><span class="line">        TreeNode right;</span><br><span class="line"></span><br><span class="line">        public TreeNode(TreeNode left, int val,TreeNode right) {</span><br><span class="line">            this.left = left;</span><br><span class="line">            this.val = val;</span><br><span class="line">            this.right = right;</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        public TreeNode() {</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    public int findBottomLeftValue(TreeNode root) {</span><br><span class="line">            Queue&lt;TreeNode&gt; queue = new LinkedList&lt;&gt;();</span><br><span class="line">            queue.offer(root);</span><br><span class="line">            int res = 0;</span><br><span class="line">            while (!queue.isEmpty()) {</span><br><span class="line">                int size = queue.size();</span><br><span class="line">                for (int i = 0; i &lt; size; i++) {</span><br><span class="line">                    TreeNode poll = queue.poll();</span><br><span class="line">                    if (i == 0) {</span><br><span class="line">                        res = poll.val;</span><br><span class="line">                    }</span><br><span class="line">                    if (poll.left != null) {</span><br><span class="line">                        queue.offer(poll.left);</span><br><span class="line">                    }</span><br><span class="line">                    if (poll.right != null) {</span><br><span class="line">                        queue.offer(poll.right);</span><br><span class="line">                    }</span><br><span class="line">                }</span><br><span class="line">            }</span><br><span class="line">            return res;</span><br><span class="line">        }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+                <h2 id="二叉树搜索树的最小绝对差：LK530"><a href="#二叉树搜索树的最小绝对差：LK530" class="headerlink" title="二叉树搜索树的最小绝对差：LK530"></a>二叉树搜索树的最小绝对差：LK530</h2><h3 id="思路：运用递归或者迭代遍历记录前后两个节点的最小差值"><a href="#思路：运用递归或者迭代遍历记录前后两个节点的最小差值" class="headerlink" title="思路：运用递归或者迭代遍历记录前后两个节点的最小差值"></a>思路：运用递归或者迭代遍历记录前后两个节点的最小差值</h3><h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line">package org.example.二叉树;</span><br><span class="line"></span><br><span class="line">import java.util.*;</span><br><span class="line"></span><br><span class="line">public class LK530 {</span><br><span class="line">    class TreeNode {</span><br><span class="line">        TreeNode left;</span><br><span class="line">        int val;</span><br><span class="line">        TreeNode right;</span><br><span class="line"></span><br><span class="line">        public TreeNode(int val) {</span><br><span class="line">            this.val = val;</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        public TreeNode(TreeNode left, int val,TreeNode right) {</span><br><span class="line">            this.left = left;</span><br><span class="line">            this.val = val;</span><br><span class="line">            this.right = right;</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        public TreeNode() {</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    public int getMinimumDifference(TreeNode root) {</span><br><span class="line">        Stack&lt;TreeNode&gt; stack = new Stack&lt;&gt;();</span><br><span class="line">        TreeNode pre = null;</span><br><span class="line">        int result = Integer.MAX_VALUE;</span><br><span class="line"></span><br><span class="line">        if(root != null)</span><br><span class="line">            stack.add(root);</span><br><span class="line">        while(!stack.isEmpty()){</span><br><span class="line">            TreeNode curr = stack.peek();</span><br><span class="line">            if(curr != null){</span><br><span class="line">                stack.pop();</span><br><span class="line">                if(curr.right != null)</span><br><span class="line">                    stack.add(curr.right);</span><br><span class="line">                stack.add(curr);</span><br><span class="line">                stack.add(null);//为后面的条件计算服务pre</span><br><span class="line">                if(curr.left != null)</span><br><span class="line">                    stack.add(curr.left);</span><br><span class="line">            }else{</span><br><span class="line">                stack.pop();</span><br><span class="line">                TreeNode temp = stack.pop();</span><br><span class="line">                if(pre != null)</span><br><span class="line">                    result = Math.min(result, temp.val - pre.val);</span><br><span class="line">                pre = temp;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        return result;</span><br><span class="line">    }</span><br><span class="line">    TreeNode pre;// 记录上一个遍历的结点</span><br><span class="line">    int result = Integer.MAX_VALUE;</span><br><span class="line">    public int getMinimumDifference2(TreeNode root) {</span><br><span class="line">        if(root==null)return 0;</span><br><span class="line">        traversal(root);</span><br><span class="line">        return result;</span><br><span class="line">    }</span><br><span class="line">    public void traversal(TreeNode root){</span><br><span class="line">        if(root==null)return;</span><br><span class="line">        //左</span><br><span class="line">        traversal(root.left);</span><br><span class="line">        //中</span><br><span class="line">        if(pre!=null){</span><br><span class="line">            result = Math.min(result,root.val-pre.val);</span><br><span class="line">        }</span><br><span class="line">        pre = root;</span><br><span class="line">        //右</span><br><span class="line">        traversal(root.right);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
-<h2 id="路径总和：LK112"><a href="#路径总和：LK112" class="headerlink" title="路径总和：LK112"></a>路径总和：LK112</h2><h3 id="思路：递归遍历每一条路径，并计算路径上的节点的值总和，等于sum-就返回-true"><a href="#思路：递归遍历每一条路径，并计算路径上的节点的值总和，等于sum-就返回-true" class="headerlink" title="思路：递归遍历每一条路径，并计算路径上的节点的值总和，等于sum 就返回 true"></a>思路：递归遍历每一条路径，并计算路径上的节点的值总和，等于sum 就返回 true</h3><h3 id="代码：-1"><a href="#代码：-1" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">package org.example.二叉树;</span><br><span class="line"></span><br><span class="line">public class LK112 {</span><br><span class="line">    class TreeNode {</span><br><span class="line">        TreeNode left;</span><br><span class="line">        int val;</span><br><span class="line">        TreeNode right;</span><br><span class="line"></span><br><span class="line">        public TreeNode(TreeNode left, int val,TreeNode right) {</span><br><span class="line">            this.left = left;</span><br><span class="line">            this.val = val;</span><br><span class="line">            this.right = right;</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        public TreeNode() {</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    public boolean hasPathSum(TreeNode root, int targetSum) {</span><br><span class="line">        if (root == null){</span><br><span class="line">            return false;</span><br><span class="line">        }</span><br><span class="line">        targetSum -= root.val;</span><br><span class="line">    if (root.left ==null &amp;&amp; root.right == null){</span><br><span class="line">        return targetSum == 0;</span><br><span class="line">    }</span><br><span class="line">    if (root.left != null){</span><br><span class="line">        boolean left = hasPathSum(root.left, targetSum);</span><br><span class="line">        if (left == true){</span><br><span class="line">            return true;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    if (root.right != null){</span><br><span class="line">        boolean right = hasPathSum(root.right, targetSum);</span><br><span class="line">        if (right == true){</span><br><span class="line">            return true;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">        return false;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="二叉搜索树中的众数：LK501"><a href="#二叉搜索树中的众数：LK501" class="headerlink" title="二叉搜索树中的众数：LK501"></a>二叉搜索树中的众数：LK501</h2><h3 id="思路：遍历二叉树记录其中的众数"><a href="#思路：遍历二叉树记录其中的众数" class="headerlink" title="思路：遍历二叉树记录其中的众数"></a>思路：遍历二叉树记录其中的众数</h3><h3 id="代码：-1"><a href="#代码：-1" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line">package org.example.二叉树;</span><br><span class="line"></span><br><span class="line">import java.util.ArrayList;</span><br><span class="line"></span><br><span class="line">public class LK501 {</span><br><span class="line">    class TreeNode {</span><br><span class="line">        TreeNode left;</span><br><span class="line">        int val;</span><br><span class="line">        TreeNode right;</span><br><span class="line"></span><br><span class="line">        public TreeNode(int val) {</span><br><span class="line">            this.val = val;</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        public TreeNode(TreeNode left, int val,TreeNode right) {</span><br><span class="line">            this.left = left;</span><br><span class="line">            this.val = val;</span><br><span class="line">            this.right = right;</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        public TreeNode() {</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    ArrayList&lt;Integer&gt; resList;</span><br><span class="line">    int maxCount;</span><br><span class="line">    int count;</span><br><span class="line">    TreeNode pre;</span><br><span class="line">    public int[] findMode(TreeNode root) {</span><br><span class="line">            resList = new ArrayList&lt;&gt;();</span><br><span class="line">            maxCount = 0;</span><br><span class="line">            count = 0;</span><br><span class="line">            pre = null;</span><br><span class="line">            findMode1(root);</span><br><span class="line">            int[] res = new int[resList.size()];</span><br><span class="line">            for (int i = 0; i &lt; resList.size(); i++) {</span><br><span class="line">                res[i] = resList.get(i);</span><br><span class="line">            }</span><br><span class="line">            return res;</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        public void findMode1(TreeNode root) {</span><br><span class="line">            if (root == null) {</span><br><span class="line">                return;</span><br><span class="line">            }</span><br><span class="line">            findMode1(root.left);</span><br><span class="line"></span><br><span class="line">            int rootValue = root.val;</span><br><span class="line">            // 计数</span><br><span class="line">            if (pre == null || rootValue != pre.val) {</span><br><span class="line">                count = 1;</span><br><span class="line">            } else {</span><br><span class="line">                count++;</span><br><span class="line">            }</span><br><span class="line">            // 更新结果以及maxCount</span><br><span class="line">            if (count &gt; maxCount) {</span><br><span class="line">                resList.clear();</span><br><span class="line">                resList.add(rootValue);</span><br><span class="line">                maxCount = count;</span><br><span class="line">            } else if (count == maxCount) {</span><br><span class="line">                resList.add(rootValue);</span><br><span class="line">            }</span><br><span class="line">            pre = root;</span><br><span class="line"></span><br><span class="line">            findMode1(root.right);</span><br><span class="line">        }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
-<h1 id="从中序与后序遍历序列构造二叉树：LK106"><a href="#从中序与后序遍历序列构造二叉树：LK106" class="headerlink" title="从中序与后序遍历序列构造二叉树：LK106"></a>从中序与后序遍历序列构造二叉树：LK106</h1><h3 id="思路：后序遍历确定根节点"><a href="#思路：后序遍历确定根节点" class="headerlink" title="思路：后序遍历确定根节点"></a>思路：后序遍历确定根节点</h3><h3 id="根据根节点划分中序数组的左右子树"><a href="#根据根节点划分中序数组的左右子树" class="headerlink" title="根据根节点划分中序数组的左右子树"></a>根据根节点划分中序数组的左右子树</h3><img src="/2024/05/07/day21/image-20240507162748144.png" alt="image-20240507162748144" style="zoom: 200%;">
-
-<h3 id="代码：-2"><a href="#代码：-2" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">package org.example.二叉树;</span><br><span class="line"></span><br><span class="line">public class LK106 {</span><br><span class="line">    class TreeNode {</span><br><span class="line">        TreeNode left;</span><br><span class="line">        int val;</span><br><span class="line">        TreeNode right;</span><br><span class="line"></span><br><span class="line">        public TreeNode(TreeNode left, int val,TreeNode right) {</span><br><span class="line">            this.left = left;</span><br><span class="line">            this.val = val;</span><br><span class="line">            this.right = right;</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        public TreeNode(int val) {</span><br><span class="line">            this.val = val;</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        public TreeNode() {</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    public TreeNode buildTree(int[] inorder, int[] postorder) {</span><br><span class="line">        if (inorder.length == 0 || postorder.length == 0){</span><br><span class="line">            return null;</span><br><span class="line">        }</span><br><span class="line">        return buildHelper(inorder, 0, inorder.length, postorder, 0, postorder.length);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    public TreeNode buildHelper(int[] inorder, int inorderStart, int inorderEnd,</span><br><span class="line">                                int[] postorder, int postorderStart, int postorderEnd){</span><br><span class="line">        if (postorderStart == postorderEnd){return null;}</span><br><span class="line">        //找到后序数组的最后一个数确定根元素</span><br><span class="line">        int rootVal = postorder[postorderEnd - 1];</span><br><span class="line">        //构造根节点</span><br><span class="line">        TreeNode root = new TreeNode(rootVal);</span><br><span class="line">        //根据根节点划分中序数组的左右子数组</span><br><span class="line">        int middleIndex;</span><br><span class="line">        for (middleIndex = inorderStart; middleIndex &lt; inorderEnd; middleIndex ++){</span><br><span class="line">            if (inorder[middleIndex] == rootVal){break;}</span><br><span class="line">        }</span><br><span class="line">        //中序数组划分</span><br><span class="line">        int leftInorderStart = inorderStart;//</span><br><span class="line">        int leftInorderEnd = middleIndex;//</span><br><span class="line"></span><br><span class="line">        int rightInorderStart = middleIndex + 1;//</span><br><span class="line">        int rightInorderEnd = inorderEnd;</span><br><span class="line">        //后序数组划分</span><br><span class="line">        int leftPostorderStart = postorderStart;</span><br><span class="line">        int leftPostorderEnd = postorderStart + (middleIndex - inorderStart);//important</span><br><span class="line">        int rightPostorderStart = leftPostorderEnd;</span><br><span class="line">        int rightPostorderEnd = postorderEnd - 1;//除去根节点</span><br><span class="line"></span><br><span class="line">        root.left = buildHelper(inorder, leftInorderStart, leftInorderEnd,  postorder, leftPostorderStart, leftPostorderEnd);</span><br><span class="line">        root.right = buildHelper(inorder, rightInorderStart, rightInorderEnd, postorder, rightPostorderStart, rightPostorderEnd);</span><br><span class="line"></span><br><span class="line">        return root;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="二叉树的最近公共祖先：LK236"><a href="#二叉树的最近公共祖先：LK236" class="headerlink" title="二叉树的最近公共祖先：LK236"></a>二叉树的最近公共祖先：LK236</h2><h3 id="思路：用二叉树的后序遍历，再由回溯算法由下向上搜索"><a href="#思路：用二叉树的后序遍历，再由回溯算法由下向上搜索" class="headerlink" title="思路：用二叉树的后序遍历，再由回溯算法由下向上搜索"></a>思路：用二叉树的后序遍历，再由回溯算法由下向上搜索</h3><h3 id="代码：-2"><a href="#代码：-2" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">package org.example.二叉树;</span><br><span class="line"></span><br><span class="line">public class LK236 {</span><br><span class="line">    class TreeNode {</span><br><span class="line">        TreeNode left;</span><br><span class="line">        int val;</span><br><span class="line">        TreeNode right;</span><br><span class="line"></span><br><span class="line">        public TreeNode(int val) {</span><br><span class="line">            this.val = val;</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        public TreeNode(TreeNode left, int val,TreeNode right) {</span><br><span class="line">            this.left = left;</span><br><span class="line">            this.val = val;</span><br><span class="line">            this.right = right;</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        public TreeNode() {</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    //后序遍历，利用它的回溯法</span><br><span class="line">    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {</span><br><span class="line">        if (root == null || root == p || root == q){</span><br><span class="line">            return root;</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        TreeNode left = lowestCommonAncestor(root.left, p, q);</span><br><span class="line">        TreeNode right = lowestCommonAncestor(root.right, p, q);</span><br><span class="line"></span><br><span class="line">        if (left == null &amp;&amp; right == null){</span><br><span class="line">            return null;</span><br><span class="line">        } else if (left == null &amp;&amp; right != null) {</span><br><span class="line">            return right;</span><br><span class="line">        } else if (left != null &amp;&amp; right == null) {</span><br><span class="line">            return left;</span><br><span class="line">        }else {</span><br><span class="line">            return root;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
                 
             </div>
             <hr/>
@@ -577,7 +579,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://cyc199811.github.io/2024/05/07/day21/">https://cyc199811.github.io/2024/05/07/day21/</a>
+                    <a href="https://cyc199811.github.io/2024/05/09/day23/">https://cyc199811.github.io/2024/05/09/day23/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -621,6 +623,10 @@
                             
                                 <a href="/tags/%E9%80%92%E5%BD%92/">
                                     <span class="chip bg-color">递归</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%9B%9E%E6%BA%AF/">
+                                    <span class="chip bg-color">回溯</span>
                                 </a>
                             
                         </div>
@@ -790,9 +796,68 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2024/05/09/day23/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="day018">
+                        
+                        <span class="card-title">day018</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-05-09
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95%E6%AF%8F%E6%97%A5%E5%88%B7%E9%A2%98/" class="post-category">
+                                    代码随想录每日刷题
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/">
+                        <span class="chip bg-color">二叉树</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%80%92%E5%BD%92/">
+                        <span class="chip bg-color">递归</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%9B%9E%E6%BA%AF/">
+                        <span class="chip bg-color">回溯</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2024/05/08/day22/">
                     <div class="card-image">
@@ -810,9 +875,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-05-08
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-05-08
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -834,55 +899,6 @@
                     
                     <a href="/tags/%E9%80%92%E5%BD%92/">
                         <span class="chip bg-color">递归</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2024/05/06/%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="卖股票的最佳时机">
-                        
-                        <span class="card-title">卖股票的最佳时机</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-05-06
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" class="post-category">
-                                    动态规划
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
-                        <span class="chip bg-color">动态规划</span>
                     </a>
                     
                 </div>
