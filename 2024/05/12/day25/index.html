@@ -5,7 +5,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="day07, 程玉春的博客">
+    <meta name="keywords" content="day020, 程玉春的博客">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>day07 | 程玉春的博客</title>
+    <title>day020 | 程玉春的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -364,12 +364,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">day07</h1>
+                    <h1 class="description center-align post-title">day020</h1>
                 </div>
             </div>
         </div>
@@ -485,8 +485,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/">
-                                <span class="chip bg-color">哈希表</span>
+                            <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/">
+                                <span class="chip bg-color">二叉树</span>
+                            </a>
+                        
+                            <a href="/tags/%E9%80%92%E5%BD%92/">
+                                <span class="chip bg-color">递归</span>
                             </a>
                         
                     </div>
@@ -510,7 +514,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2024-04-24
+                    2024-05-12
                 </div>
                 
 
@@ -519,7 +523,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    776
+                    748
                 </div>
                 
 
@@ -541,65 +545,13 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="反转字符串：LK334"><a href="#反转字符串：LK334" class="headerlink" title="反转字符串：LK334"></a>反转字符串：LK334</h2><p>双指针法：一个在左边，一个在右边，进行值的交换</p>
-<img src="/2024/04/24/day07/image-20240504061124679.png" alt="image-20240504061124679" style="zoom:200%;">
+                <h2 id="修剪二叉搜索树：LK669"><a href="#修剪二叉搜索树：LK669" class="headerlink" title="修剪二叉搜索树：LK669"></a>修剪二叉搜索树：LK669</h2><h3 id="思路：和删除二叉搜索树差不多，只是多了一个范围"><a href="#思路：和删除二叉搜索树差不多，只是多了一个范围" class="headerlink" title="思路：和删除二叉搜索树差不多，只是多了一个范围"></a>思路：和删除二叉搜索树差不多，只是多了一个范围</h3><h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line">package org.example.二叉树;</span><br><span class="line"></span><br><span class="line">public class LK669 {</span><br><span class="line">    class TreeNode {</span><br><span class="line">        TreeNode left;</span><br><span class="line">        int val;</span><br><span class="line">        TreeNode right;</span><br><span class="line"></span><br><span class="line">        public TreeNode(int val) {</span><br><span class="line">            this.val = val;</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        public TreeNode(TreeNode left, int val,TreeNode right) {</span><br><span class="line">            this.left = left;</span><br><span class="line">            this.val = val;</span><br><span class="line">            this.right = right;</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        public TreeNode() {</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    public TreeNode trimBST(TreeNode root, int low, int high) {</span><br><span class="line"></span><br><span class="line">        if (root == null){</span><br><span class="line">            return null;</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        if (root.val &lt; low){</span><br><span class="line">            TreeNode right = trimBST(root.right, low, high);//修剪完再返回</span><br><span class="line">            return right;</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        if (root.val &gt; high){</span><br><span class="line">            TreeNode left = trimBST(root.left, low, high);//修剪完再返回</span><br><span class="line">            return left;</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        root.left = trimBST(root.left, low, high);</span><br><span class="line">        root.right = trimBST(root.right, low, high);</span><br><span class="line"></span><br><span class="line">        return root;</span><br><span class="line">    }</span><br><span class="line">    class Solution {</span><br><span class="line">        //iteration</span><br><span class="line">        public TreeNode trimBST(TreeNode root, int low, int high) {</span><br><span class="line">            if(root == null)</span><br><span class="line">                return null;</span><br><span class="line">            while(root != null &amp;&amp; (root.val &lt; low || root.val &gt; high)){</span><br><span class="line">                if(root.val &lt; low)</span><br><span class="line">                    root = root.right;</span><br><span class="line">                else</span><br><span class="line">                    root = root.left;</span><br><span class="line">            }</span><br><span class="line"></span><br><span class="line">            TreeNode curr = root;</span><br><span class="line"></span><br><span class="line">            //deal with root's left sub-tree, and deal with the value smaller than low.</span><br><span class="line">            while(curr != null){</span><br><span class="line">                while(curr.left != null &amp;&amp; curr.left.val &lt; low){</span><br><span class="line">                    curr.left = curr.left.right;</span><br><span class="line">                }</span><br><span class="line">                curr = curr.left;</span><br><span class="line">            }</span><br><span class="line">            //go back to root;</span><br><span class="line">            curr = root;</span><br><span class="line"></span><br><span class="line">            //deal with root's righg sub-tree, and deal with the value bigger than high.</span><br><span class="line">            while(curr != null){</span><br><span class="line">                while(curr.right != null &amp;&amp; curr.right.val &gt; high){</span><br><span class="line">                    curr.right = curr.right.left;</span><br><span class="line">                }</span><br><span class="line">                curr = curr.right;</span><br><span class="line">            }</span><br><span class="line">            return root;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
-<p>代码：</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">package org.example.哈希;</span><br><span class="line"></span><br><span class="line">public class num344 {</span><br><span class="line">    public void reverseString(char[] s) {</span><br><span class="line">        int left = 0;</span><br><span class="line">        int right = s.length - 1;</span><br><span class="line">        while (left &lt; right){</span><br><span class="line">            char leftChar = s[left];</span><br><span class="line">            char rightChar = s[right];</span><br><span class="line">            s[left] = rightChar;</span><br><span class="line">            s[right] = leftChar;</span><br><span class="line">            left ++;</span><br><span class="line">            right --;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="将有序数组转换为二叉搜索树：LK108"><a href="#将有序数组转换为二叉搜索树：LK108" class="headerlink" title="将有序数组转换为二叉搜索树：LK108"></a>将有序数组转换为二叉搜索树：LK108</h2><h3 id="思路：寻找分割点，分割点作为当前节点，然后递归左区间和右区间。"><a href="#思路：寻找分割点，分割点作为当前节点，然后递归左区间和右区间。" class="headerlink" title="思路：寻找分割点，分割点作为当前节点，然后递归左区间和右区间。"></a>思路：<strong>寻找分割点，分割点作为当前节点，然后递归左区间和右区间</strong>。</h3><h3 id="代码：-1"><a href="#代码：-1" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line">package org.example.二叉树;</span><br><span class="line"></span><br><span class="line">import java.util.LinkedList;</span><br><span class="line">import java.util.Queue;</span><br><span class="line"></span><br><span class="line">public class LK108 {</span><br><span class="line">    class TreeNode {</span><br><span class="line">        TreeNode left;</span><br><span class="line">        int val;</span><br><span class="line">        TreeNode right;</span><br><span class="line"></span><br><span class="line">        public TreeNode(int val) {</span><br><span class="line">            this.val = val;</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        public TreeNode(TreeNode left, int val, TreeNode right) {</span><br><span class="line">            this.left = left;</span><br><span class="line">            this.val = val;</span><br><span class="line">            this.right = right;</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        public TreeNode() {</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    public TreeNode sortedArrayToBST(int[] nums) {</span><br><span class="line">        if (nums.length == 0) {</span><br><span class="line">            return null;</span><br><span class="line">        }</span><br><span class="line">        //根节点初始化</span><br><span class="line">        TreeNode root = new TreeNode(-1);</span><br><span class="line">        Queue&lt;TreeNode&gt; nodeQueue = new LinkedList&lt;&gt;();</span><br><span class="line">        Queue&lt;Integer&gt; leftQueue = new LinkedList&lt;&gt;();</span><br><span class="line">        Queue&lt;Integer&gt; rightQueue = new LinkedList&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        // 根节点入队列</span><br><span class="line">        nodeQueue.offer(root);</span><br><span class="line">        // 0为左区间下标初始位置</span><br><span class="line">        leftQueue.offer(0);</span><br><span class="line">        // nums.size() - 1为右区间下标初始位置</span><br><span class="line">        rightQueue.offer(nums.length - 1);</span><br><span class="line"></span><br><span class="line">        while (!nodeQueue.isEmpty()) {</span><br><span class="line">            TreeNode currNode = nodeQueue.poll();</span><br><span class="line">            int left = leftQueue.poll();</span><br><span class="line">            int right = rightQueue.poll();</span><br><span class="line">            int mid = left + ((right - left) &gt;&gt; 1);</span><br><span class="line"></span><br><span class="line">            // 将mid对应的元素给中间节点</span><br><span class="line">            currNode.val = nums[mid];</span><br><span class="line"></span><br><span class="line">            // 处理左区间</span><br><span class="line">            if (left &lt;= mid - 1) {</span><br><span class="line">                currNode.left = new TreeNode(-1);</span><br><span class="line">                nodeQueue.offer(currNode.left);</span><br><span class="line">                leftQueue.offer(left);</span><br><span class="line">                rightQueue.offer(mid - 1);</span><br><span class="line">            }</span><br><span class="line"></span><br><span class="line">            // 处理右区间</span><br><span class="line">            if (right &gt;= mid + 1) {</span><br><span class="line">                currNode.right = new TreeNode(-1);</span><br><span class="line">                nodeQueue.offer(currNode.right);</span><br><span class="line">                leftQueue.offer(mid + 1);</span><br><span class="line">                rightQueue.offer(right);</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        return root;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
-<h2 id="反转字符串-II：LK541"><a href="#反转字符串-II：LK541" class="headerlink" title="反转字符串 II：LK541"></a>反转字符串 II：LK541</h2><p>和翻转字符串 1 一样，只是这里的反转的组变成了 2 * K ，然后在 2 * K 中进行上述的操作！！！</p>
-<p>代码：</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">package org.example.哈希;</span><br><span class="line"></span><br><span class="line">public class num541 {</span><br><span class="line">    public String reverseStr(String s, int k) {</span><br><span class="line">        char[] ch = s.toCharArray();//转换成数组</span><br><span class="line">        for(int i = 0; i &lt; ch.length; i += 2 * k){</span><br><span class="line">            int start = i;</span><br><span class="line">            //这里是判断尾数够不够k个来取决end指针的位置</span><br><span class="line">            int end = Math.min(ch.length - 1, start + k - 1);</span><br><span class="line">            //用异或运算反转 </span><br><span class="line">            while(start &lt; end){</span><br><span class="line">                char temp = ch[start];</span><br><span class="line">                ch[start] = ch[end];</span><br><span class="line">                ch[end] = temp;</span><br><span class="line">                start++;</span><br><span class="line">                end--;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        return new String(ch);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="其他方法代码："><a href="#其他方法代码：" class="headerlink" title="其他方法代码："></a>其他方法代码：</h3><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> {</span><br><span class="line">    <span class="keyword">public</span> TreeNode <span class="title function_">sortedArrayToBST</span><span class="params">(<span class="type">int</span>[] nums)</span> {</span><br><span class="line">        <span class="keyword">return</span> sortedArrayToBST(nums, <span class="number">0</span>, nums.length);</span><br><span class="line">    }</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> TreeNode <span class="title function_">sortedArrayToBST</span><span class="params">(<span class="type">int</span>[] nums, <span class="type">int</span> left, <span class="type">int</span> right)</span> {</span><br><span class="line">        <span class="keyword">if</span> (left &gt;= right) {</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">if</span> (right - left == <span class="number">1</span>) {</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">TreeNode</span>(nums[left]);</span><br><span class="line">        }</span><br><span class="line">        <span class="type">int</span> <span class="variable">mid</span> <span class="operator">=</span> left + (right - left) / <span class="number">2</span>;</span><br><span class="line">        <span class="type">TreeNode</span> <span class="variable">root</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">TreeNode</span>(nums[mid]);</span><br><span class="line">        root.left = sortedArrayToBST(nums, left, mid);</span><br><span class="line">        root.right = sortedArrayToBST(nums, mid + <span class="number">1</span>, right);</span><br><span class="line">        <span class="keyword">return</span> root;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
-<h2 id="替换数字：CR054"><a href="#替换数字：CR054" class="headerlink" title="替换数字：CR054"></a>替换数字：CR054</h2><p>没有什么技巧和难点！！！</p>
-<p>代码：</p>
-<p>import java.util.Scanner;</p>
-<p>class Main {<br>    public static void main(String[] args) {<br>        Scanner in = new Scanner(System.in);<br>        String s = in.nextLine();<br>        StringBuilder sb = new StringBuilder();<br>        for (int i = 0; i &lt; s.length(); i++) {<br>            if (Character.isDigit(s.charAt(i))) {<br>                sb.append(“number”);<br>            }else sb.append(s.charAt(i));<br>        }<br>        System.out.println(sb);<br>    }<br>}</p>
-<h2 id="反转字符串中的单词：LK151"><a href="#反转字符串中的单词：LK151" class="headerlink" title="反转字符串中的单词：LK151"></a>反转字符串中的单词：LK151</h2><ul>
-<li>移除多余空格 : “the sky is blue”</li>
-<li>字符串反转：”eulb si yks eht”</li>
-<li>单词反转：”blue is sky the”</li>
-<li>反转一次字符串</li>
-<li>再反转一次单词即可</li>
-</ul>
-<p>代码：</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line">package org.example.数组字符串;</span><br><span class="line"></span><br><span class="line">public class num151 {</span><br><span class="line">    public String reverseWords(String s) {</span><br><span class="line">        // 1.去除首尾以及中间多余空格</span><br><span class="line">        StringBuilder sb = removeSpace(s);</span><br><span class="line">        // 2.反转整个字符串</span><br><span class="line">        reverseString(sb, 0, sb.length() - 1);</span><br><span class="line">        // 3.反转各个单词</span><br><span class="line">        reverseEachWord(sb);</span><br><span class="line">        return sb.toString();</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    private StringBuilder removeSpace(String s) {</span><br><span class="line">        int start = 0;</span><br><span class="line">        int end = s.length() - 1;</span><br><span class="line">        while (s.charAt(start) == ' ') start++;</span><br><span class="line">        while (s.charAt(end) == ' ') end--;</span><br><span class="line">        StringBuilder sb = new StringBuilder();</span><br><span class="line">        while (start &lt;= end) {</span><br><span class="line">            char c = s.charAt(start);</span><br><span class="line">            if (c != ' ' || sb.charAt(sb.length() - 1) != ' ') {</span><br><span class="line">                sb.append(c);</span><br><span class="line">            }</span><br><span class="line">            start++;</span><br><span class="line">        }</span><br><span class="line">        return sb;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 反转字符串指定区间[start, end]的字符</span><br><span class="line">     */</span><br><span class="line">    public void reverseString(StringBuilder sb, int start, int end) {</span><br><span class="line">        while (start &lt; end) {</span><br><span class="line">            char temp = sb.charAt(start);</span><br><span class="line">            sb.setCharAt(start, sb.charAt(end));</span><br><span class="line">            sb.setCharAt(end, temp);</span><br><span class="line">            start++;</span><br><span class="line">            end--;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    private void reverseEachWord(StringBuilder sb) {</span><br><span class="line">        int start = 0;</span><br><span class="line">        int end = 1;</span><br><span class="line">        int n = sb.length();</span><br><span class="line">        while (start &lt; n) {</span><br><span class="line">            while (end &lt; n &amp;&amp; sb.charAt(end) != ' ') {</span><br><span class="line">                end++;</span><br><span class="line">            }</span><br><span class="line">            reverseString(sb, start, end - 1);</span><br><span class="line">            start = end + 1;</span><br><span class="line">            end = start + 1;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
-<h2 id="左旋转字符：CR055"><a href="#左旋转字符：CR055" class="headerlink" title="左旋转字符：CR055"></a>左旋转字符：CR055</h2><p>和上面的反转字符中的单词类似：</p>
-<p>代码：</p>
-<pre><code>import java.util.Scanner;
-
-public class Main {
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        int n = Integer.parseInt(in.nextLine());
-        String s = in.nextLine();
-        
- int len = s.length();  //获取字符串长度
-    char[] chars = s.toCharArray();
-    reverseString(chars, 0, len - n - 1);  //反转前一段字符串，此时的字符串首尾是0,len - n - 1
-    reverseString(chars, len - n, len - 1);  //反转后一段字符串，此时的字符串首尾是len - n,len - 1
-    reverseString(chars, 0, len - 1);  //反转整个字符串
-
-    System.out.println(chars);
-
-}
-
-public static void reverseString(char[] ch, int start, int end) {
-    //异或法反转字符串，参照题目 344.反转字符串的解释
-    while (start &lt; end) {
-        ch[start] ^= ch[end];
-        ch[end] ^= ch[start];
-        ch[start] ^= ch[end];
-        start++;
-        end--;
-    }
-}
-}
-</code></pre>
-<p>其中可以使用异或运算来进行反转：</p>
-<p>public static void reverseString(char[] ch, int start, int end) {<br>    //异或法反转字符串，参照题目 344.反转字符串的解释<br>    while (start &lt; end) {<br>        ch[start] ^= ch[end];<br>        ch[end] ^= ch[start];<br>        ch[start] ^= ch[end];<br>        start++;<br>        end–;<br>    }<br>}</p>
-
+<h2 id="把二叉搜索树转换为累加树：LK538"><a href="#把二叉搜索树转换为累加树：LK538" class="headerlink" title="把二叉搜索树转换为累加树：LK538"></a>把二叉搜索树转换为累加树：LK538</h2><h3 id="思路：按右中左顺序遍历累加即可"><a href="#思路：按右中左顺序遍历累加即可" class="headerlink" title="思路：按右中左顺序遍历累加即可"></a>思路：按右中左顺序遍历累加即可</h3><h3 id="代码：-2"><a href="#代码：-2" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">package org.example.二叉树;</span><br><span class="line"></span><br><span class="line">import java.util.LinkedList;</span><br><span class="line">import java.util.Queue;</span><br><span class="line">import java.util.Stack;</span><br><span class="line"></span><br><span class="line">public class LK538 {</span><br><span class="line">    class TreeNode {</span><br><span class="line">        TreeNode left;</span><br><span class="line">        int val;</span><br><span class="line">        TreeNode right;</span><br><span class="line"></span><br><span class="line">        public TreeNode(int val) {</span><br><span class="line">            this.val = val;</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        public TreeNode(TreeNode left, int val,TreeNode right) {</span><br><span class="line">            this.left = left;</span><br><span class="line">            this.val = val;</span><br><span class="line">            this.right = right;</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        public TreeNode() {</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    int sum;</span><br><span class="line">    public TreeNode convertBST(TreeNode root) {</span><br><span class="line"></span><br><span class="line">            sum = 0;</span><br><span class="line">            convertBST1(root);</span><br><span class="line">            return root;</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        // 按右中左顺序遍历，累加即可</span><br><span class="line">        public void convertBST1(TreeNode root) {</span><br><span class="line">            if (root == null) {</span><br><span class="line">                return;</span><br><span class="line">            }</span><br><span class="line">            convertBST1(root.right);</span><br><span class="line">            sum += root.val;</span><br><span class="line">            root.val = sum;</span><br><span class="line">            convertBST1(root.left);</span><br><span class="line">        }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
                 
             </div>
             <hr/>
@@ -625,7 +577,7 @@ public static void reverseString(char[] ch, int start, int end) {
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://cyc199811.github.io/2024/04/24/day07/">https://cyc199811.github.io/2024/04/24/day07/</a>
+                    <a href="https://cyc199811.github.io/2024/05/12/day25/">https://cyc199811.github.io/2024/05/12/day25/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -663,8 +615,12 @@ public static void reverseString(char[] ch, int start, int end) {
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/">
-                                    <span class="chip bg-color">哈希表</span>
+                                <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/">
+                                    <span class="chip bg-color">二叉树</span>
+                                </a>
+                            
+                                <a href="/tags/%E9%80%92%E5%BD%92/">
+                                    <span class="chip bg-color">递归</span>
                                 </a>
                             
                         </div>
@@ -838,13 +794,13 @@ public static void reverseString(char[] ch, int start, int end) {
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2024/04/25/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E4%B9%8B%E8%83%8C%E5%8C%85/">
+                <a href="/2024/05/12/day24/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="背包问题">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="day019">
                         
-                        <span class="card-title">背包问题</span>
+                        <span class="card-title">day019</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -855,14 +811,14 @@ public static void reverseString(char[] ch, int start, int end) {
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-04-25
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-05-12
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" class="post-category">
-                                    动态规划
+                            <a href="/categories/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95%E6%AF%8F%E6%97%A5%E5%88%B7%E9%A2%98/" class="post-category">
+                                    代码随想录每日刷题
                                 </a>
                             
                             
@@ -872,8 +828,12 @@ public static void reverseString(char[] ch, int start, int end) {
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
-                        <span class="chip bg-color">动态规划</span>
+                    <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/">
+                        <span class="chip bg-color">二叉树</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%80%92%E5%BD%92/">
+                        <span class="chip bg-color">递归</span>
                     </a>
                     
                 </div>
@@ -887,13 +847,13 @@ public static void reverseString(char[] ch, int start, int end) {
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2024/04/23/day06/">
+                <a href="/2024/05/09/day23/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="day06">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="day018">
                         
-                        <span class="card-title">day06</span>
+                        <span class="card-title">day018</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -904,7 +864,7 @@ public static void reverseString(char[] ch, int start, int end) {
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-04-23
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-05-09
                             </span>
                         <span class="publish-author">
                             
@@ -921,8 +881,16 @@ public static void reverseString(char[] ch, int start, int end) {
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/">
-                        <span class="chip bg-color">哈希表</span>
+                    <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/">
+                        <span class="chip bg-color">二叉树</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%80%92%E5%BD%92/">
+                        <span class="chip bg-color">递归</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">回溯算法</span>
                     </a>
                     
                 </div>
