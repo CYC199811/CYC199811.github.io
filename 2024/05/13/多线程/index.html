@@ -5,7 +5,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="day021, 程玉春的博客">
+    <meta name="keywords" content="多线程, 程玉春的博客">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>day021 | 程玉春的博客</title>
+    <title>多线程 | 程玉春的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -364,12 +364,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">day021</h1>
+                    <h1 class="description center-align post-title">多线程</h1>
                 </div>
             </div>
         </div>
@@ -519,7 +519,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    144
+                    279
                 </div>
                 
 
@@ -544,6 +544,8 @@
                 <h2 id="按序打印：LK1114"><a href="#按序打印：LK1114" class="headerlink" title="按序打印：LK1114"></a>按序打印：LK1114</h2><h3 id="思路：使用线程等待的方式实现执行屏障，使用释放线程等待的方式实现屏障消除"><a href="#思路：使用线程等待的方式实现执行屏障，使用释放线程等待的方式实现屏障消除" class="headerlink" title="思路：使用线程等待的方式实现执行屏障，使用释放线程等待的方式实现屏障消除"></a>思路：使用线程等待的方式实现执行屏障，使用释放线程等待的方式实现屏障消除</h3><img src="/2024/05/13/%E5%A4%9A%E7%BA%BF%E7%A8%8B/image-20240513103906660.png" alt="image-20240513103906660" style="zoom:200%;">
 
 <h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">package org.example.多线程;</span><br><span class="line"></span><br><span class="line">class Foo {</span><br><span class="line"></span><br><span class="line">    private boolean firstFinished;</span><br><span class="line">    private boolean secondFinished;</span><br><span class="line">    private Object lock = new Object();</span><br><span class="line"></span><br><span class="line">    public Foo() {</span><br><span class="line"></span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    public void first(Runnable printFirst) throws InterruptedException {</span><br><span class="line"></span><br><span class="line">        synchronized (lock) {</span><br><span class="line">            // printFirst.run() outputs "first". Do not change or remove this line.</span><br><span class="line">            printFirst.run();</span><br><span class="line">            firstFinished = true;</span><br><span class="line">            lock.notifyAll();</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    public void second(Runnable printSecond) throws InterruptedException {</span><br><span class="line"></span><br><span class="line">        synchronized (lock) {</span><br><span class="line">            while (!firstFinished) {</span><br><span class="line">                lock.wait();</span><br><span class="line">            }</span><br><span class="line"></span><br><span class="line">            // printSecond.run() outputs "second". Do not change or remove this line.</span><br><span class="line">            printSecond.run();</span><br><span class="line">            secondFinished = true;</span><br><span class="line">            lock.notifyAll();</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    public void third(Runnable printThird) throws InterruptedException {</span><br><span class="line"></span><br><span class="line">        synchronized (lock) {</span><br><span class="line">            while (!secondFinished) {</span><br><span class="line">                lock.wait();</span><br><span class="line">            }</span><br><span class="line"></span><br><span class="line">            // printThird.run() outputs "third". Do not change or remove this line.</span><br><span class="line">            printThird.run();</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="交替打印-FooBar"><a href="#交替打印-FooBar" class="headerlink" title="交替打印 FooBar"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/print-foobar-alternately/">交替打印 FooBar</a></h2><h3 id="思路：设置异步锁，保证两个线程是交替进行"><a href="#思路：设置异步锁，保证两个线程是交替进行" class="headerlink" title="思路：设置异步锁，保证两个线程是交替进行"></a>思路：设置异步锁，保证两个线程是交替进行</h3><h3 id="代码：-1"><a href="#代码：-1" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">package org.example.多线程;</span><br><span class="line"></span><br><span class="line">import java.util.concurrent.*;</span><br><span class="line">import java.util.concurrent.locks.Condition;</span><br><span class="line">import java.util.concurrent.locks.Lock;</span><br><span class="line">import java.util.concurrent.locks.ReentrantLock;</span><br><span class="line"></span><br><span class="line">//synchronized</span><br><span class="line">class FooBar1 {</span><br><span class="line"></span><br><span class="line">    private int n;</span><br><span class="line"></span><br><span class="line">    private final Object lock;</span><br><span class="line"></span><br><span class="line">    private int flag;</span><br><span class="line"></span><br><span class="line">    public FooBar1(int n) {</span><br><span class="line">        this.n = n;</span><br><span class="line">        this.flag = 0;</span><br><span class="line">        this.lock = new Object();</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    public void foo(Runnable printFoo) throws InterruptedException {</span><br><span class="line">        for (int i = 0; i &lt; n; i++) {</span><br><span class="line">            synchronized (lock) {</span><br><span class="line">                while (flag == 1) {</span><br><span class="line">                    lock.wait();</span><br><span class="line">                }</span><br><span class="line">                printFoo.run();</span><br><span class="line">                flag = 1;</span><br><span class="line">                lock.notifyAll();</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    public void bar(Runnable printBar) throws InterruptedException {</span><br><span class="line">        for (int i = 0; i &lt; n; i++) {</span><br><span class="line">            synchronized (lock) {</span><br><span class="line">                while (flag == 0) {</span><br><span class="line">                    lock.wait();</span><br><span class="line">                }</span><br><span class="line">                printBar.run();</span><br><span class="line">                flag = 0;</span><br><span class="line">                lock.notifyAll();</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
                 
             </div>
             <hr/>
@@ -787,9 +789,9 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="day021">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="多线程">
                         
-                        <span class="card-title">day021</span>
+                        <span class="card-title">多线程</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1075,7 +1077,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">18.7k</span>&nbsp;字
+                class="white-color">18.8k</span>&nbsp;字
             
             
             
