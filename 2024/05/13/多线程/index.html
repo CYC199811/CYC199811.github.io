@@ -519,7 +519,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    279
+                    478
                 </div>
                 
 
@@ -546,6 +546,8 @@
 <h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">package org.example.多线程;</span><br><span class="line"></span><br><span class="line">class Foo {</span><br><span class="line"></span><br><span class="line">    private boolean firstFinished;</span><br><span class="line">    private boolean secondFinished;</span><br><span class="line">    private Object lock = new Object();</span><br><span class="line"></span><br><span class="line">    public Foo() {</span><br><span class="line"></span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    public void first(Runnable printFirst) throws InterruptedException {</span><br><span class="line"></span><br><span class="line">        synchronized (lock) {</span><br><span class="line">            // printFirst.run() outputs "first". Do not change or remove this line.</span><br><span class="line">            printFirst.run();</span><br><span class="line">            firstFinished = true;</span><br><span class="line">            lock.notifyAll();</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    public void second(Runnable printSecond) throws InterruptedException {</span><br><span class="line"></span><br><span class="line">        synchronized (lock) {</span><br><span class="line">            while (!firstFinished) {</span><br><span class="line">                lock.wait();</span><br><span class="line">            }</span><br><span class="line"></span><br><span class="line">            // printSecond.run() outputs "second". Do not change or remove this line.</span><br><span class="line">            printSecond.run();</span><br><span class="line">            secondFinished = true;</span><br><span class="line">            lock.notifyAll();</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    public void third(Runnable printThird) throws InterruptedException {</span><br><span class="line"></span><br><span class="line">        synchronized (lock) {</span><br><span class="line">            while (!secondFinished) {</span><br><span class="line">                lock.wait();</span><br><span class="line">            }</span><br><span class="line"></span><br><span class="line">            // printThird.run() outputs "third". Do not change or remove this line.</span><br><span class="line">            printThird.run();</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
 <h2 id="交替打印-FooBar"><a href="#交替打印-FooBar" class="headerlink" title="交替打印 FooBar"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/print-foobar-alternately/">交替打印 FooBar</a></h2><h3 id="思路：设置异步锁，保证两个线程是交替进行"><a href="#思路：设置异步锁，保证两个线程是交替进行" class="headerlink" title="思路：设置异步锁，保证两个线程是交替进行"></a>思路：设置异步锁，保证两个线程是交替进行</h3><h3 id="代码：-1"><a href="#代码：-1" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">package org.example.多线程;</span><br><span class="line"></span><br><span class="line">import java.util.concurrent.*;</span><br><span class="line">import java.util.concurrent.locks.Condition;</span><br><span class="line">import java.util.concurrent.locks.Lock;</span><br><span class="line">import java.util.concurrent.locks.ReentrantLock;</span><br><span class="line"></span><br><span class="line">//synchronized</span><br><span class="line">class FooBar1 {</span><br><span class="line"></span><br><span class="line">    private int n;</span><br><span class="line"></span><br><span class="line">    private final Object lock;</span><br><span class="line"></span><br><span class="line">    private int flag;</span><br><span class="line"></span><br><span class="line">    public FooBar1(int n) {</span><br><span class="line">        this.n = n;</span><br><span class="line">        this.flag = 0;</span><br><span class="line">        this.lock = new Object();</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    public void foo(Runnable printFoo) throws InterruptedException {</span><br><span class="line">        for (int i = 0; i &lt; n; i++) {</span><br><span class="line">            synchronized (lock) {</span><br><span class="line">                while (flag == 1) {</span><br><span class="line">                    lock.wait();</span><br><span class="line">                }</span><br><span class="line">                printFoo.run();</span><br><span class="line">                flag = 1;</span><br><span class="line">                lock.notifyAll();</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    public void bar(Runnable printBar) throws InterruptedException {</span><br><span class="line">        for (int i = 0; i &lt; n; i++) {</span><br><span class="line">            synchronized (lock) {</span><br><span class="line">                while (flag == 0) {</span><br><span class="line">                    lock.wait();</span><br><span class="line">                }</span><br><span class="line">                printBar.run();</span><br><span class="line">                flag = 0;</span><br><span class="line">                lock.notifyAll();</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="1116-打印零与奇偶数"><a href="#1116-打印零与奇偶数" class="headerlink" title="1116. 打印零与奇偶数"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/print-zero-even-odd/">1116. 打印零与奇偶数</a></h2><h3 id="思路：每一轮迭代分为四步，-先0-奇数-再0-偶数-，用两个开关即可以控制它们的顺序。"><a href="#思路：每一轮迭代分为四步，-先0-奇数-再0-偶数-，用两个开关即可以控制它们的顺序。" class="headerlink" title="思路：每一轮迭代分为四步，[先0] [奇数] [再0] [偶数]，用两个开关即可以控制它们的顺序。"></a>思路：每一轮迭代分为四步，[先0] [奇数] [再0] [偶数]，用两个开关即可以控制它们的顺序。</h3><h3 id="具体的先后顺序控制方法与题1115-交替打印-FooBar是一样的。"><a href="#具体的先后顺序控制方法与题1115-交替打印-FooBar是一样的。" class="headerlink" title="具体的先后顺序控制方法与题1115. 交替打印 FooBar是一样的。"></a>具体的先后顺序控制方法与题1115. 交替打印 FooBar是一样的。</h3><h3 id="代码：-2"><a href="#代码：-2" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">package org.example.多线程;</span><br><span class="line"></span><br><span class="line">import java.util.function.IntConsumer;</span><br><span class="line"></span><br><span class="line">class ZeroEvenOdd {</span><br><span class="line">    private int n;</span><br><span class="line">    private volatile boolean needZero;</span><br><span class="line">    private volatile boolean needOdd;</span><br><span class="line"></span><br><span class="line">    public ZeroEvenOdd(int n) {</span><br><span class="line">        this.n = n;</span><br><span class="line">        needZero = true;</span><br><span class="line">        needOdd = true;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    // printNumber.accept(x) outputs "x", where x is an integer.</span><br><span class="line">    public void zero(IntConsumer printNumber) throws InterruptedException {</span><br><span class="line">        for (int i = 0; i &lt; n; ) {</span><br><span class="line">            if (needZero) {</span><br><span class="line">                printNumber.accept(0);</span><br><span class="line">                i++;</span><br><span class="line">                needZero = false;</span><br><span class="line">            } else {</span><br><span class="line">                Thread.yield();</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    public void even(IntConsumer printNumber) throws InterruptedException {</span><br><span class="line">        for (int i = 2; i &lt;= n; ) {</span><br><span class="line">            if (!needZero &amp;&amp; !needOdd) {</span><br><span class="line">                printNumber.accept(i);</span><br><span class="line">                i += 2;</span><br><span class="line">                needZero = true;</span><br><span class="line">                needOdd = true;</span><br><span class="line">            } else {</span><br><span class="line">                Thread.yield();</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    public void odd(IntConsumer printNumber) throws InterruptedException {</span><br><span class="line">        for (int i = 1; i &lt;= n; ) {</span><br><span class="line">            if (!needZero &amp;&amp; needOdd) {</span><br><span class="line">                printNumber.accept(i);</span><br><span class="line">                i += 2;</span><br><span class="line">                needZero = true;</span><br><span class="line">                needOdd = false;</span><br><span class="line">            } else {</span><br><span class="line">                Thread.yield();</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
                 
             </div>
             <hr/>
@@ -780,18 +782,17 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2024/05/13/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">
+                <a href="/2024/05/14/day28/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="多线程">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="day021">
                         
-                        <span class="card-title">多线程</span>
+                        <span class="card-title">day021</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -801,27 +802,30 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-05-13
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-05-14
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="post-category">
-                                    多线程
+                            <a href="/categories/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95%E6%AF%8F%E6%97%A5%E5%88%B7%E9%A2%98/" class="post-category">
+                                    代码随想录每日刷题
+                                </a>
+                            
+                            <a href="/categories/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95%E6%AF%8F%E6%97%A5%E5%88%B7%E9%A2%98/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/" class="post-category">
+                                    回溯算法
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E9%94%81%E7%9A%84%E6%9C%BA%E5%88%B6/">
-                        <span class="chip bg-color">多线程锁的机制</span>
+                    <a href="/tags/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">回溯算法</span>
                     </a>
                     
                 </div>
@@ -835,7 +839,7 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2024/05/13/day26/">
+                <a href="/2024/05/13/day27/">
                     <div class="card-image">
                         
                         
@@ -1077,7 +1081,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">18.8k</span>&nbsp;字
+                class="white-color">19.4k</span>&nbsp;字
             
             
             
