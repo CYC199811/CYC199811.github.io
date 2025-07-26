@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>自建个人的MoonTV</title>
+      <link href="/CYC199811/CYC199811.github.io/2025/07/26/MoonTV%E9%83%A8%E7%BD%B2/"/>
+      <url>/CYC199811/CYC199811.github.io/2025/07/26/MoonTV%E9%83%A8%E7%BD%B2/</url>
+      
+        <content type="html"><![CDATA[<p>##1.登陆自己的github账号</p><h3 id="自己进行登录，没有的话就注册一个"><a href="#自己进行登录，没有的话就注册一个" class="headerlink" title="自己进行登录，没有的话就注册一个"></a>自己进行登录，没有的话就注册一个</h3><h2 id="2-将MoonTV项目Fork到自己的仓库"><a href="#2-将MoonTV项目Fork到自己的仓库" class="headerlink" title="2.将MoonTV项目Fork到自己的仓库"></a>2.将MoonTV项目Fork到自己的仓库</h2><h3 id="拉取好的项目页面如下："><a href="#拉取好的项目页面如下：" class="headerlink" title="拉取好的项目页面如下："></a>拉取好的项目页面如下：</h3><img src="MoonTV部署/image-20250726184909631.png" alt="image-20250726184909631" style="zoom: 50%;"><h2 id="3-登陆Cloudflare账号"><a href="#3-登陆Cloudflare账号" class="headerlink" title="3.登陆Cloudflare账号"></a>3.登陆Cloudflare账号</h2><h3 id="自己进行登录，没有的话就注册一个-1"><a href="#自己进行登录，没有的话就注册一个-1" class="headerlink" title="自己进行登录，没有的话就注册一个"></a>自己进行登录，没有的话就注册一个</h3><img src="MoonTV部署/image-20250726185123346.png" alt="image-20250726185123346" style="zoom:50%;"><h2 id="4-进行项目的部署"><a href="#4-进行项目的部署" class="headerlink" title="4.进行项目的部署"></a>4.进行项目的部署</h2><h3 id="1-在侧边栏找到worker-and-pages页面"><a href="#1-在侧边栏找到worker-and-pages页面" class="headerlink" title="1.在侧边栏找到worker and pages页面"></a>1.在侧边栏找到worker and pages页面</h3><img src="MoonTV部署/image-20250726185433048.png" alt="image-20250726185433048" style="zoom:50%;"><h3 id="2-新建一个Page，并进行github账号关联，使用账号进行项目导入"><a href="#2-新建一个Page，并进行github账号关联，使用账号进行项目导入" class="headerlink" title="2.新建一个Page，并进行github账号关联，使用账号进行项目导入"></a>2.新建一个Page，并进行github账号关联，使用账号进行项目导入</h3><img src="MoonTV部署/image-20250726185734619.png" alt="image-20250726185734619" style="zoom:50%;"><h3 id="3-点击开始"><a href="#3-点击开始" class="headerlink" title="3.点击开始"></a>3.点击开始</h3><h3 id="4-进行部署，其中相关的设置命令等如下："><a href="#4-进行部署，其中相关的设置命令等如下：" class="headerlink" title="4.进行部署，其中相关的设置命令等如下："></a>4.进行部署，其中相关的设置命令等如下：</h3><img src="MoonTV部署/image-20250726190341239.png" alt="image-20250726190341239" style="zoom:50%;"> <h2 id="5-成功进行访问"><a href="#5-成功进行访问" class="headerlink" title="5.成功进行访问"></a>5.成功进行访问</h2><img src="MoonTV部署/image-20250726190229498.png" alt="image-20250726190229498" style="zoom: 33%;"><h2 id="6-进行域名的绑定-也可以不用"><a href="#6-进行域名的绑定-也可以不用" class="headerlink" title="6.进行域名的绑定 (也可以不用)"></a>6.进行域名的绑定 (也可以不用)</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> github开源项目 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> github </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title></title>
       <link href="/CYC199811/CYC199811.github.io/2024/06/15/%E5%AD%A6%E6%88%90%E5%9C%A8%E7%BA%BF%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95/"/>
       <url>/CYC199811/CYC199811.github.io/2024/06/15/%E5%AD%A6%E6%88%90%E5%9C%A8%E7%BA%BF%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95/</url>
@@ -582,31 +607,6 @@
         <tags>
             
             <tag> 栈与队列 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>自建个人的MoonTV</title>
-      <link href="/CYC199811/CYC199811.github.io/2024/04/25/MoonTV%E9%83%A8%E7%BD%B2/"/>
-      <url>/CYC199811/CYC199811.github.io/2024/04/25/MoonTV%E9%83%A8%E7%BD%B2/</url>
-      
-        <content type="html"><![CDATA[<p>##1.登陆自己的github账号</p><h3 id="自己进行登录，没有的话就注册一个"><a href="#自己进行登录，没有的话就注册一个" class="headerlink" title="自己进行登录，没有的话就注册一个"></a>自己进行登录，没有的话就注册一个</h3><h2 id="2-将MoonTV项目Fork到自己的仓库"><a href="#2-将MoonTV项目Fork到自己的仓库" class="headerlink" title="2.将MoonTV项目Fork到自己的仓库"></a>2.将MoonTV项目Fork到自己的仓库</h2><h3 id="拉取好的项目页面如下："><a href="#拉取好的项目页面如下：" class="headerlink" title="拉取好的项目页面如下："></a>拉取好的项目页面如下：</h3><img src="MoonTV部署/image-20250726184909631.png" alt="image-20250726184909631" style="zoom: 50%;"><h2 id="3-登陆Cloudflare账号"><a href="#3-登陆Cloudflare账号" class="headerlink" title="3.登陆Cloudflare账号"></a>3.登陆Cloudflare账号</h2><h3 id="自己进行登录，没有的话就注册一个-1"><a href="#自己进行登录，没有的话就注册一个-1" class="headerlink" title="自己进行登录，没有的话就注册一个"></a>自己进行登录，没有的话就注册一个</h3><img src="MoonTV部署/image-20250726185123346.png" alt="image-20250726185123346" style="zoom:50%;"><h2 id="4-进行项目的部署"><a href="#4-进行项目的部署" class="headerlink" title="4.进行项目的部署"></a>4.进行项目的部署</h2><h3 id="1-在侧边栏找到worker-and-pages页面"><a href="#1-在侧边栏找到worker-and-pages页面" class="headerlink" title="1.在侧边栏找到worker and pages页面"></a>1.在侧边栏找到worker and pages页面</h3><img src="MoonTV部署/image-20250726185433048.png" alt="image-20250726185433048" style="zoom:50%;"><h3 id="2-新建一个Page，并进行github账号关联，使用账号进行项目导入"><a href="#2-新建一个Page，并进行github账号关联，使用账号进行项目导入" class="headerlink" title="2.新建一个Page，并进行github账号关联，使用账号进行项目导入"></a>2.新建一个Page，并进行github账号关联，使用账号进行项目导入</h3><img src="MoonTV部署/image-20250726185734619.png" alt="image-20250726185734619" style="zoom:50%;"><h3 id="3-点击开始"><a href="#3-点击开始" class="headerlink" title="3.点击开始"></a>3.点击开始</h3><h3 id="4-进行部署，其中相关的设置命令等如下："><a href="#4-进行部署，其中相关的设置命令等如下：" class="headerlink" title="4.进行部署，其中相关的设置命令等如下："></a>4.进行部署，其中相关的设置命令等如下：</h3><img src="MoonTV部署/image-20250726190341239.png" alt="image-20250726190341239" style="zoom:50%;"> <h2 id="5-成功进行访问"><a href="#5-成功进行访问" class="headerlink" title="5.成功进行访问"></a>5.成功进行访问</h2><img src="MoonTV部署/image-20250726190229498.png" alt="image-20250726190229498" style="zoom: 33%;"><h2 id="6-进行域名的绑定-也可以不用"><a href="#6-进行域名的绑定-也可以不用" class="headerlink" title="6.进行域名的绑定 (也可以不用)"></a>6.进行域名的绑定 (也可以不用)</h2>]]></content>
-      
-      
-      <categories>
-          
-          <category> github开源项目 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> github </tag>
             
         </tags>
       
