@@ -6,7 +6,7 @@
   <link href="https://github.com/CYC199811/CYC199811.github.io/atom.xml" rel="self"/>
   
   <link href="https://github.com/CYC199811/CYC199811.github.io/"/>
-  <updated>2025-07-26T11:12:41.982Z</updated>
+  <updated>2025-07-26T11:21:45.872Z</updated>
   <id>https://github.com/CYC199811/CYC199811.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>自建个人的MoonTV</title>
+    <title>MoonTV部署</title>
     <link href="https://github.com/CYC199811/CYC199811.github.io/2025/07/26/MoonTV%E9%83%A8%E7%BD%B2/"/>
     <id>https://github.com/CYC199811/CYC199811.github.io/2025/07/26/MoonTV%E9%83%A8%E7%BD%B2/</id>
     <published>2025-07-26T10:43:15.000Z</published>
-    <updated>2025-07-26T11:12:41.982Z</updated>
+    <updated>2025-07-26T11:21:45.872Z</updated>
     
     <content type="html"><![CDATA[<p>##1.登陆自己的github账号</p><h3 id="自己进行登录，没有的话就注册一个"><a href="#自己进行登录，没有的话就注册一个" class="headerlink" title="自己进行登录，没有的话就注册一个"></a>自己进行登录，没有的话就注册一个</h3><h2 id="2-将MoonTV项目Fork到自己的仓库"><a href="#2-将MoonTV项目Fork到自己的仓库" class="headerlink" title="2.将MoonTV项目Fork到自己的仓库"></a>2.将MoonTV项目Fork到自己的仓库</h2><h3 id="拉取好的项目页面如下："><a href="#拉取好的项目页面如下：" class="headerlink" title="拉取好的项目页面如下："></a>拉取好的项目页面如下：</h3><img src="MoonTV部署/image-20250726184909631.png" alt="image-20250726184909631" style="zoom: 50%;"><h2 id="3-登陆Cloudflare账号"><a href="#3-登陆Cloudflare账号" class="headerlink" title="3.登陆Cloudflare账号"></a>3.登陆Cloudflare账号</h2><h3 id="自己进行登录，没有的话就注册一个-1"><a href="#自己进行登录，没有的话就注册一个-1" class="headerlink" title="自己进行登录，没有的话就注册一个"></a>自己进行登录，没有的话就注册一个</h3><img src="MoonTV部署/image-20250726185123346.png" alt="image-20250726185123346" style="zoom:50%;"><h2 id="4-进行项目的部署"><a href="#4-进行项目的部署" class="headerlink" title="4.进行项目的部署"></a>4.进行项目的部署</h2><h3 id="1-在侧边栏找到worker-and-pages页面"><a href="#1-在侧边栏找到worker-and-pages页面" class="headerlink" title="1.在侧边栏找到worker and pages页面"></a>1.在侧边栏找到worker and pages页面</h3><img src="MoonTV部署/image-20250726185433048.png" alt="image-20250726185433048" style="zoom:50%;"><h3 id="2-新建一个Page，并进行github账号关联，使用账号进行项目导入"><a href="#2-新建一个Page，并进行github账号关联，使用账号进行项目导入" class="headerlink" title="2.新建一个Page，并进行github账号关联，使用账号进行项目导入"></a>2.新建一个Page，并进行github账号关联，使用账号进行项目导入</h3><img src="MoonTV部署/image-20250726185734619.png" alt="image-20250726185734619" style="zoom:50%;"><h3 id="3-点击开始"><a href="#3-点击开始" class="headerlink" title="3.点击开始"></a>3.点击开始</h3><h3 id="4-进行部署，其中相关的设置命令等如下："><a href="#4-进行部署，其中相关的设置命令等如下：" class="headerlink" title="4.进行部署，其中相关的设置命令等如下："></a>4.进行部署，其中相关的设置命令等如下：</h3><img src="MoonTV部署/image-20250726190341239.png" alt="image-20250726190341239" style="zoom:50%;"> <h2 id="5-成功进行访问"><a href="#5-成功进行访问" class="headerlink" title="5.成功进行访问"></a>5.成功进行访问</h2><img src="MoonTV部署/image-20250726190229498.png" alt="image-20250726190229498" style="zoom: 33%;"><h2 id="6-进行域名的绑定-也可以不用"><a href="#6-进行域名的绑定-也可以不用" class="headerlink" title="6.进行域名的绑定 (也可以不用)"></a>6.进行域名的绑定 (也可以不用)</h2>]]></content>
     
